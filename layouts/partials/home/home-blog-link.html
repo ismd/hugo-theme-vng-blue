@@ -1,0 +1,9 @@
+<a href="{{ "/posts/" | relURL }}" class="vg-home-blog-link">
+  <span class="vg-home-blog-link__text">К&nbsp;блогу</span>
+
+  <div class="vg-home-blog-link__arrow">
+    {{ with resources.Get "icons/arrow-up.svg" }}
+    {{ .Content | safeHTML }}
+    {{ end }}
+  </div>
+</a>

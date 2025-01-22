@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="{{ site.Language.LanguageCode }}" dir="{{ or site.Language.LanguageDirection `ltr` }}">
+<head>
+  {{ partial "head.html" . }}
+</head>
+
+<body>
+  <div class="vg-page-wrapper">
+    <div class="vg-page">
+      <div class="vg-page-content{{ if not .IsHome }} vg-page-content_with-sidebar{{ end }}">
+        {{ block "header" . }}
+        {{ partial "header.html" . }}
+        {{ end }}
+
+        <main class="vg-main">
+          <div class="vg-main-content">
+            {{ block "main" . }}{{ end }}
+          </div>
+        </main>
+
+        {{ block "footer" . }}
+        {{ partial "footer.html" . }}
+        {{ end }}
+      </div>
+
+      {{ block "sidebar" . }}
+      {{ partial "sidebar.html" . }}
+      {{ end }}
+    </div>
+  </div>
+</body>
+</html>

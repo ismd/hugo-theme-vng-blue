@@ -1,0 +1,13 @@
+{{ define "main" }}
+<div class="vg-tags-list">
+  {{ range .Pages }}
+  <a href="javascript:void(0);" class="vg-tags-list-item" data-tag="{{ .Name }}">{{ .Name }}</a>
+  {{ end }}
+</div>
+
+<div class="vg-posts-list vg-posts-list_toggleable">
+  {{ $posts := where .Site.RegularPages "Section" "posts" }}
+  {{ range $posts }}
+  {{ partial "post.html" (dict "post" .) }}
+  {{ end }}
+{{ end }}

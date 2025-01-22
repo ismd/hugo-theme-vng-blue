@@ -1,0 +1,29 @@
+{{ define "main" }}
+<div class="vg-categories">
+  <div class="vg-categories-list">
+    {{ range .Pages }}
+    <a href="javascript:void(0);" class="vg-categories-row" data-target="{{ .Name }}">
+      <div class="vg-categories-row__title">{{ .Name }}</div>
+      <div class="vg-categories-row__button">{{ .Site.Params.categoriesToPostsText }}</div>
+    </a>
+    {{ end }}
+  </div>
+
+  <div class="vg-categories-posts-list-wrapper">
+    {{ range .Pages }}
+    <div data-id="{{ .Name }}" class="vg-categories-posts-list">
+      {{ range .Pages }}
+      <a href="{{ .RelPermalink }}" class="vg-categories-list__item">
+        {{ with .Resources.GetMatch "cover.png" }}
+        {{ $resized := .Fill "100x65" }}
+        <img src="{{ $resized.RelPermalink }}" alt="{{ .Title }}" class="vg-categories-list__item-image" />
+        {{ end }}
+
+        {{ .Title }}
+      </a>
+      {{ end }}
+    </div>
+    {{ end }}
+  </div>
+</div>
+{{ end }}

@@ -1,0 +1,25 @@
+<div class="vg-sidebar{{ if .IsHome }} vg-sidebar_home{{ end }}">
+  <div class="vg-sidebar-main">
+    <div class="vg-sidebar__menu">
+      {{ partial "menu.html" (dict "menuID" "main" "page" .) }}
+    </div>
+
+    <div class="vg-sidebar__logo">
+      <img src="{{ "logo-sidebar.svg" | relURL }}" alt="{{ .Site.Title }}" />
+    </div>
+
+    <div class="vg-sidebar__about">
+      {{ .Site.Params.sidebarDescription | safeHTML }}
+    </div>
+
+    <div class="vg-sidebar-tags">
+      {{ range .Site.Taxonomies.tags.ByCount }}
+      <a class="vg-sidebar-tags__tag" href="{{ printf "/tags/?tags=%s" .Name | relURL }}">{{ .Name }}</a>
+      {{ end }}
+    </div>
+  </div>
+
+  <div class="vg-sidebar-footer">
+    {{ partial "social.html" . }}
+  </div>
+</div>

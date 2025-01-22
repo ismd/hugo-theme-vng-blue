@@ -1,0 +1,32 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ printf "%s | %s" .Title site.Title }}{{ end }}</title>
+
+{{ with .Site.Params.custom_script_inline }}
+{{ . | safeHTML }}
+{{ end }}
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link href="https://iosevka-webfonts.github.io/iosevka/Iosevka.css" rel="stylesheet" />
+
+<!-- Favicon for all browsers -->
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicon-64x64.png" sizes="64x64">
+
+<!-- Apple Touch Icon -->
+<link rel="apple-touch-icon" href="/apple-touch-favicon.png">
+
+<!-- Manifest for PWA -->
+<link rel="manifest" href="/site.webmanifest">
+
+{{ partialCached "head/css.html" . }}
+{{ partialCached "head/js.html" . }}
+
+{{ template "_internal/opengraph.html" . }}
+
+{{ with .OutputFormats.Get "rss" -}}
+{{ printf `<link rel=%q type=%q href=%q title=%q>` .Rel .MediaType.Type .Permalink site.Title | safeHTML }}
+{{ end }}

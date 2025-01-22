@@ -1,0 +1,60 @@
+{{ define "main" }}
+<div class="vg-about">
+  <h1>{{ .Params.headline }}</h1>
+
+  <div class="vg-about-info">
+    <div class="vg-about-info__column vg-about__content">
+      {{ .Content }}
+    </div>
+
+    <div class="vg-about-info__column">
+      <div class="vg-about-extended-info-tabs">
+        {{ range $index, $el := .Params.tabs }}
+        <div class="vg-about-extended-info-tabs__tab{{ if eq $index 0 }} vg-about-extended-info-tabs__tab_active{{ end }}" data-tab="{{ $index }}">
+          {{ .title }}
+        </div>
+        {{ end }}
+      </div>
+
+      {{ range $index, $el := .Params.tabs }}
+      <div class="vg-about-extended-info-tabs__content{{ if eq $index 0 }} vg-about-extended-info-tabs__content_active{{ end }}" data-tab="{{ $index }}">
+        <ul>
+          {{ range .items }}
+          <li>{{ . }}</li>
+          {{ end }}
+        </ul>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+
+  <a href="mailto:{{ .Params.email }}" class="vg-about-mailto">Написать мне</a>
+
+  <div class="vg-about-extended-info">
+    <div class="vg-about-extended-info__column">
+      <div class="vg-about-skills">
+        <table>
+          {{ range .Params.skills }}
+          <div class="vg-about-skills-item">
+            <tr>
+              <td>
+                <div class="vg-about-skills-item__title">{{ .title }}</div>
+              </td>
+              <td>
+                <div class="vg-about-skills-item__full-progress">
+                  <div class="vg-about-skills-item__progress" style="width: {{ .level }}%"></div>
+                </div>
+              </td>
+            </tr>
+          </div>
+          {{ end }}
+        </table>
+      </div>
+    </div>
+
+    <div class="vg-about-extended-info__column">
+      {{ .Params.info | safeHTML }}
+    </div>
+  </div>
+</div>
+{{ end }}

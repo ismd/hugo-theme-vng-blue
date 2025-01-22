@@ -1,0 +1,17 @@
+<header class="vg-header{{ if .IsHome }} vg-header_home{{ end }}">
+  <div class="vg-header__logo">
+    <a href="/">
+      <img src="{{ "logo.svg" | relURL }}" alt="{{ .Site.Title }}" />
+    </a>
+  </div>
+
+  {{ partial "menu.html" (dict "menuID" "main" "page" .) }}
+
+  <a href="javascript:void();" class="vg-hamburger">
+    <div class="vg-hamburger__box">
+      <div class="vg-hamburger__line"></div>
+      <div class="vg-hamburger__line"></div>
+      <div class="vg-hamburger__line"></div>
+    </div>
+  </a>
+</header>

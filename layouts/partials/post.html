@@ -1,0 +1,52 @@
+{{- $post := .post }}
+{{- $full := .full }}
+
+{{ with $post }}
+<div class="vg-post{{ if $full }} vg-post_full{{ end }}" data-tags="{{ delimit .Params.tags " " }}">
+  <div class="vg-post__content">
+    {{ with $post.Resources.GetMatch "cover.png" }}
+    {{ $resized := .Fill "800x450" }}
+    <div class="vg-post__image">
+      {{ if $full }}
+      <img src="{{ $resized.RelPermalink }}" alt="{{ .Title }}">
+      {{ else }}
+      <a href="{{ $post.RelPermalink }}">
+        <img src="{{ $resized.RelPermalink }}" alt="{{ .Title }}">
+      </a>
+      {{ end }}
+    </div>
+    {{ end }}
+
+    <div class="vg-post__summary">
+      {{ if .Params.categories }}
+      {{ $category := index .Params.categories 0 }}
+      <div class="vg-post__category">
+        <a href="/categories/?category={{ $category | urlquery }}">{{ $category }}</a>
+      </div>
+      {{ end }}
+
+      <div class="vg-post__title">
+        {{ if $full }}
+        {{ .LinkTitle }}
+        {{ else }}
+        <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+        {{ end }}
+      </div>
+
+      {{ if not $full }}
+      <div class="vg-post__description">
+        {{ .Summary }}
+      </div>
+      {{ end }}
+
+      {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
+    </div>
+  </div>
+
+  {{ if $full }}
+  <div class="vg-post__text">
+    {{ .Content }}
+  </div>
+  {{ end }}
+</div>
+{{ end }}

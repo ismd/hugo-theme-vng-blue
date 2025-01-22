@@ -1,0 +1,49 @@
+<div class="vg-social">
+  {{ if .Site.Params.social.youtube }}
+  <a class="vg-social__item" href="{{ .Site.Params.social.youtube }}" title="YouTube" target="_blank">
+    {{ with resources.Get "icons/youtube.svg" }}
+    {{ .Content | safeHTML }}
+    {{ end }}
+  </a>
+  {{ end }}
+
+  {{ if .Site.Params.social.github }}
+  <a class="vg-social__item" href="{{ .Site.Params.social.github }}" title="GitHub" target="_blank">
+    {{ with resources.Get "icons/github.svg" }}
+    {{ .Content | safeHTML }}
+    {{ end }}
+  </a>
+  {{ end }}
+
+  {{ if .Site.Params.social.telegram }}
+  <a class="vg-social__item" href="{{ .Site.Params.social.telegram }}" title="Telegram" target="_blank">
+    {{ with resources.Get "icons/telegram.svg" }}
+    {{ .Content | safeHTML }}
+    {{ end }}
+  </a>
+  {{ end }}
+
+  {{ if .Site.Params.social.twitch }}
+  <a class="vg-social__item" href="{{ .Site.Params.social.twitch }}" title="Twitch" target="_blank">
+    {{ with resources.Get "icons/twitch.svg" }}
+    {{ .Content | safeHTML }}
+    {{ end }}
+  </a>
+  {{ end }}
+
+  {{ if .Site.Params.social.discord }}
+  <a class="vg-social__item" href="{{ .Site.Params.social.discord }}" title="Discord" target="_blank">
+    {{ with resources.Get "icons/discord.svg" }}
+    {{ .Content | safeHTML }}
+    {{ end }}
+  </a>
+  {{ end }}
+
+  {{ with .OutputFormats.Get "rss" -}}
+  <a class="vg-social__item" href="{{ .Permalink }}" title="RSS" target="_blank">
+    {{ with resources.Get "icons/rss.svg" }}
+    {{ .Content | safeHTML }}
+    {{ end }}
+  </a>
+  {{ end }}
+</div>
