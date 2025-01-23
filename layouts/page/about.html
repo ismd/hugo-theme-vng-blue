@@ -28,7 +28,7 @@
     </div>
   </div>
 
-  <a href="mailto:{{ .Params.email }}" class="vg-about-mailto">Написать мне</a>
+  <a href="mailto:{{ .Params.email }}" class="vg-about-mailto">{{ .Site.Params.mailMeText | safeHTML }}</a>
 
   <div class="vg-about-extended-info">
     <div class="vg-about-extended-info__column">
