@@ -628,6 +628,11 @@ body.vg-sidebar-open {
   color: var(--main-color);
 }
 
+.vg-post__text ul,
+.vg-post__text ol {
+  padding-left: 20px;
+}
+
 .vg-post__text .highlight {
   overflow-x: auto;
 }
