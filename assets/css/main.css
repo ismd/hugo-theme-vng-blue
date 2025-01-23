@@ -600,7 +600,7 @@ body.vg-sidebar-open {
 .vg-post-tags__item:not(:last-child)::after {
   content: '';
   position: absolute;
-  right: -14px;
+  right: -15px;
   top: 2px;
   bottom: 2px;
   width: 2px;

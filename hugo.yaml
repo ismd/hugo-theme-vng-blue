@@ -21,6 +21,7 @@ menus:
       weight: 50
 
 params:
+  homeToBlogText: "To&nbsp;blog"
   sidebarDescription: "Hello, friend! This is my personal blog about modern technologies and useful utilities."
   social:
     youtube: "https://youtube.com/"
