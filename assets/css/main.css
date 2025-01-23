@@ -1023,6 +1023,7 @@ body.vg-sidebar-open {
 .vg-about-extended-info__column {
   flex: 1;
   min-height: 200px;
+  line-height: 1.6;
 }
 
 .vg-about-extended-info__column:last-child {
