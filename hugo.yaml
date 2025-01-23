@@ -30,7 +30,7 @@ params:
   homeToBlogText: "To&nbsp;blog"
   sidebarDescription: "Hello, friend! This is&nbsp;my&nbsp;personal blog about modern technologies and useful utilities."
   mailMeText: "Mail&nbsp;me"
-  categoriesToPostsText: "to posts"
+  categoriesToPostsText: "to&nbsp;posts"
 
 markup:
   highlight:
