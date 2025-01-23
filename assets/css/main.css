@@ -231,7 +231,6 @@ body.vg-sidebar-open {
 }
 
 .vg-sidebar-tags__tag:hover {
-  font-weight: 700;
   color: var(--main-color);
   text-decoration: none;
 }
