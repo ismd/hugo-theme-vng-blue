@@ -5,7 +5,7 @@ description = "Everything you need to create a well-structured blog with categor
 
 homepage = "https://github.com/ismd/hugo-theme-vng-blue"
 
-demosite = "<FIXME>"
+demosite = "https://ismd.github.io/demo-hugo-theme-vng-blue/"
 
 tags = ["responsive", "blog", "light", "personal"]
 features = ["categories", "tags", "about"]
