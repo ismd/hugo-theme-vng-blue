@@ -1,6 +1,6 @@
 <header class="vg-header{{ if .IsHome }} vg-header_home{{ end }}">
   <div class="vg-header__logo">
-    <a href="/">
+    <a href="{{ .Site.BaseURL }}">
       <img src="{{ "logo.svg" | relURL }}" alt="{{ .Site.Title }}" />
     </a>
   </div>
