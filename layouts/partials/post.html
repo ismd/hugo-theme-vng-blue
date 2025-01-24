@@ -21,7 +21,7 @@
       {{ if .Params.categories }}
       {{ $category := index .Params.categories 0 }}
       <div class="vg-post__category">
-        <a href="/categories/?category={{ $category | urlquery }}">{{ $category }}</a>
+        <a href="{{ printf "categories/?category=%s" ($category | urlquery) | relURL }}">{{ $category }}</a>
       </div>
       {{ end }}
 

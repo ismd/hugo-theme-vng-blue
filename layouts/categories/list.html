@@ -4,7 +4,7 @@
     {{ range .Pages }}
     <a href="javascript:void(0);" class="vg-categories-row" data-target="{{ .Name }}">
       <div class="vg-categories-row__title">{{ .Name }}</div>
-      <div class="vg-categories-row__button">{{ .Site.Params.categoriesToPostsText }}</div>
+      <div class="vg-categories-row__button">{{ .Site.Params.categoriesToPostsText | safeHTML }}</div>
     </a>
     {{ end }}
   </div>

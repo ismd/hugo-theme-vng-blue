@@ -14,7 +14,7 @@
 
     <div class="vg-sidebar-tags">
       {{ range .Site.Taxonomies.tags.ByCount }}
-      <a class="vg-sidebar-tags__tag" href="{{ printf "/tags/?tags=%s" .Name | relURL }}">{{ .Name }}</a>
+      <a class="vg-sidebar-tags__tag" href="{{ printf "tags/?tags=%s" .Name | relURL }}">{{ .Name }}</a>
       {{ end }}
     </div>
   </div>

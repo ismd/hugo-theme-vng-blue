@@ -756,7 +756,6 @@ body.vg-sidebar-open {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: url('/home-content-background.svg') no-repeat center;
   padding: 0 5px;
   font-family: var(--secondary-font);
   font-size: 24px;

@@ -15,7 +15,7 @@ For a given taxonomy, renders a list of terms assigned to the page.
   <div class="vg-post-tags">
     {{ range . }}
     <div class="vg-post-tags__item">
-      <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+      <a href="{{ printf "tags/?tags=%s" .Name | relURL }}">{{ .Name }}</a>
     </div>
     {{ end }}
   </div>

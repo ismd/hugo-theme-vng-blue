@@ -2,7 +2,7 @@
   <div class="vg-home-social__header">{{ .Params.nextEventHeading }}</div>
 
   <div class="vg-home-social-content">
-    <div class="vg-home-social-content-item">
+    <div class="vg-home-social-content-item" style="background: url('{{ "home-content-background.svg" | relURL }}') no-repeat center;">
       {{ .Params.nextEventDate }}
     </div>
 
@@ -12,7 +12,7 @@
       {{ end }}
     </div>
 
-    <div class="vg-home-social-content-item">
+    <div class="vg-home-social-content-item" style="background: url('{{ "home-content-background.svg" | relURL }}') no-repeat center;">
       {{ .Params.nextEventTime }}
     </div>
   </div>
