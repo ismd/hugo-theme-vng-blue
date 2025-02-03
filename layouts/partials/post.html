@@ -5,7 +5,7 @@
 <div class="vg-post{{ if $full }} vg-post_full{{ end }}" data-tags="{{ delimit .Params.tags " " }}">
   <div class="vg-post__content">
     {{ with $post.Resources.GetMatch "cover.png" }}
-    {{ $resized := .Fill "800x450" }}
+    {{ $resized := .Resize "800x" }}
     <div class="vg-post__image">
       {{ if $full }}
       <img src="{{ $resized.RelPermalink }}" alt="{{ .Title }}">
