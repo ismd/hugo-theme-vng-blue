@@ -1201,6 +1201,10 @@ body.vg-sidebar-open {
   color: var(--main-color);
   line-height: 1.2;
 }
+
+.vg-categories-list__item img {
+  width: 100px;
+}
 /* END CATEGORIES */
 
 /* TAGS LIST */
