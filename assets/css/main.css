@@ -371,7 +371,9 @@ body.vg-sidebar-open {
 }
 
 .vg-header__logo {
-  padding: 18px 18px 0 50px;
+  display: flex;
+  padding: 22px 18px 0 50px;
+  align-items: center;
 }
 
 .vg-header__logo a {
