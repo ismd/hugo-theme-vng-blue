@@ -184,7 +184,7 @@ body.vg-sidebar-open {
 }
 
 .vg-sidebar__logo img {
-  width: 170px;
+  width: 100%;
 }
 
 .vg-sidebar__about {
@@ -342,10 +342,6 @@ body.vg-sidebar-open {
     height: 170px;
     min-height: 170px;
     min-width: 170px;
-  }
-
-  .vg-sidebar__logo img {
-    width: 120px;
   }
 
   .vg-sidebar__about {
