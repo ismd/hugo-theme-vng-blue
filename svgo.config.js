@@ -7,11 +7,5 @@ module.exports = {
                 currentColor: true,
             },
         },
-        {
-            name: "removeAttrs",
-            params: {
-                attrs: "fill",
-            },
-        },
     ],
 };
