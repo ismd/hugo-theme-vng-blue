@@ -79,11 +79,13 @@
   </a>
   {{ end }}
 
-  {{ with .OutputFormats.Get "rss" }}
+  {{ with .Site.GetPage "section" "posts" }}
+  {{ with .OutputFormats.Get "rss" -}}
   <a class="vg-social__item" href="{{ .Permalink }}" title="RSS" target="_blank">
     {{ with resources.Get "icons/social/rss.svg" }}
     {{ .Content | safeHTML }}
     {{ end }}
   </a>
+  {{ end }}
   {{ end }}
 </div>
