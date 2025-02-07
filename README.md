@@ -7,3 +7,9 @@
 ## Installation
 
 ## Configuration
+
+## Icons
+
+```sh
+svgo --config svgo.config.js assets/icons/social/*.svg
+```

@@ -22,11 +22,17 @@ menus:
 
 params:
   social:
-    youtube: "https://youtube.com/"
+    discord: "https://discord.com/"
+    facebook: "https://facebook.com/"
     github: "https://github.com/"
+    instagram: "https://instagram.com/"
+    linkedin: "https://linkedin.com/"
     telegram: "https://t.me/"
     twitch: "https://twitch.tv/"
-    discord: "https://discord.com/"
+    whatsapp: "https://whatsapp.com/"
+    x: "https://x.com/"
+    youtube: "https://youtube.com/"
+    
   homeToBlogText: "To&nbsp;blog"
   sidebarDescription: "Hello, friend! This is&nbsp;my&nbsp;personal blog about modern technologies and useful utilities."
   mailMeText: "Mail&nbsp;me"

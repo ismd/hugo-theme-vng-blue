@@ -1,7 +1,15 @@
 <div class="vg-social">
-  {{ if .Site.Params.social.youtube }}
-  <a class="vg-social__item" href="{{ .Site.Params.social.youtube }}" title="YouTube" target="_blank">
-    {{ with resources.Get "icons/youtube.svg" }}
+  {{ if .Site.Params.social.discord }}
+  <a class="vg-social__item" href="{{ .Site.Params.social.discord }}" title="Discord" target="_blank">
+    {{ with resources.Get "icons/social/discord.svg" }}
+    {{ .Content | safeHTML }}
+    {{ end }}
+  </a>
+  {{ end }}
+
+  {{ if .Site.Params.social.facebook }}
+  <a class="vg-social__item" href="{{ .Site.Params.social.facebook }}" title="Facebook" target="_blank">
+    {{ with resources.Get "icons/social/facebook.svg" }}
     {{ .Content | safeHTML }}
     {{ end }}
   </a>
@@ -9,7 +17,23 @@
 
   {{ if .Site.Params.social.github }}
   <a class="vg-social__item" href="{{ .Site.Params.social.github }}" title="GitHub" target="_blank">
-    {{ with resources.Get "icons/github.svg" }}
+    {{ with resources.Get "icons/social/github.svg" }}
+    {{ .Content | safeHTML }}
+    {{ end }}
+  </a>
+  {{ end }}
+
+  {{ if .Site.Params.social.instagram }}
+  <a class="vg-social__item" href="{{ .Site.Params.social.instagram }}" title="Instagram" target="_blank">
+    {{ with resources.Get "icons/social/instagram.svg" }}
+    {{ .Content | safeHTML }}
+    {{ end }}
+  </a>
+  {{ end }}
+
+  {{ if .Site.Params.social.linkedin }}
+  <a class="vg-social__item" href="{{ .Site.Params.social.linkedin }}" title="LinkedIn" target="_blank">
+    {{ with resources.Get "icons/social/linkedin.svg" }}
     {{ .Content | safeHTML }}
     {{ end }}
   </a>
@@ -17,7 +41,7 @@
 
   {{ if .Site.Params.social.telegram }}
   <a class="vg-social__item" href="{{ .Site.Params.social.telegram }}" title="Telegram" target="_blank">
-    {{ with resources.Get "icons/telegram.svg" }}
+    {{ with resources.Get "icons/social/telegram.svg" }}
     {{ .Content | safeHTML }}
     {{ end }}
   </a>
@@ -25,23 +49,39 @@
 
   {{ if .Site.Params.social.twitch }}
   <a class="vg-social__item" href="{{ .Site.Params.social.twitch }}" title="Twitch" target="_blank">
-    {{ with resources.Get "icons/twitch.svg" }}
+    {{ with resources.Get "icons/social/twitch.svg" }}
     {{ .Content | safeHTML }}
     {{ end }}
   </a>
   {{ end }}
 
-  {{ if .Site.Params.social.discord }}
-  <a class="vg-social__item" href="{{ .Site.Params.social.discord }}" title="Discord" target="_blank">
-    {{ with resources.Get "icons/discord.svg" }}
+  {{ if .Site.Params.social.whatsapp }}
+  <a class="vg-social__item" href="{{ .Site.Params.social.whatsapp }}" title="WhatsApp" target="_blank">
+    {{ with resources.Get "icons/social/whatsapp.svg" }}
     {{ .Content | safeHTML }}
     {{ end }}
   </a>
   {{ end }}
 
-  {{ with .OutputFormats.Get "rss" -}}
+  {{ if .Site.Params.social.x }}
+  <a class="vg-social__item" href="{{ .Site.Params.social.x }}" title="X" target="_blank">
+    {{ with resources.Get "icons/social/x.svg" }}
+    {{ .Content | safeHTML }}
+    {{ end }}
+  </a>
+  {{ end }}
+  
+  {{ if .Site.Params.social.youtube }}
+  <a class="vg-social__item" href="{{ .Site.Params.social.youtube }}" title="YouTube" target="_blank">
+    {{ with resources.Get "icons/social/youtube.svg" }}
+    {{ .Content | safeHTML }}
+    {{ end }}
+  </a>
+  {{ end }}
+
+  {{ with .OutputFormats.Get "rss" }}
   <a class="vg-social__item" href="{{ .Permalink }}" title="RSS" target="_blank">
-    {{ with resources.Get "icons/rss.svg" }}
+    {{ with resources.Get "icons/social/rss.svg" }}
     {{ .Content | safeHTML }}
     {{ end }}
   </a>
