@@ -499,6 +499,7 @@ body.vg-sidebar-open {
 }
 
 .vg-footer .vg-social__item svg {
+  fill: transparent;
   color: var(--background-color-dark);
 }
 /* END FOOTER */
