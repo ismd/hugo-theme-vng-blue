@@ -1,17 +1,17 @@
 module.exports = {
     plugins: [
+        "removeDimensions",
         {
-            name: 'removeDimensions',
-            active: true,
-        },
-        {
-            name: 'addAttributesToSVGElement',
+            name: "convertColors",
             params: {
-                attributes: [{ viewBox: '0 0 24 24' }],
+                currentColor: true,
             },
         },
         {
-            name: 'removeUselessStrokeAndFill',
+            name: "removeAttrs",
+            params: {
+                attrs: "fill",
+            },
         },
     ],
 };
