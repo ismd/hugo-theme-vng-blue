@@ -34,7 +34,7 @@ params:
     youtube: "https://youtube.com/"
     
   homeToBlogText: "To&nbsp;blog"
-  sidebarDescription: "Hello, friend! This is&nbsp;my&nbsp;personal blog about modern technologies and useful utilities."
+  description: "Hello! This is&nbsp;my&nbsp;personal blog about modern technologies and useful utilities."
   mailMeText: "Mail&nbsp;me"
   categoriesToPostsText: "to&nbsp;posts"
 
