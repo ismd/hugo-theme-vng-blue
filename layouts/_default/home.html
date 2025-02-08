@@ -3,10 +3,10 @@
   <div class="vg-home-center vg-home-center_top">
     <div class="vg-home-center__logo">
       {{ with resources.Get "home-logo-top.png" }}
-      {{ $image := .Resize "800x" }}
-      {{ $image2x := .Resize "1600x" }}
+      {{ $width := string (div .Width 2) }}
+      {{ $image := .Resize (delimit (slice $width "x") "") }}
       <img src="{{ $image.RelPermalink }}"
-           srcset="{{ $image2x.RelPermalink }} 2x" />
+           srcset="{{ .RelPermalink }} 2x" />
       {{ end }}
     </div>
 
@@ -22,10 +22,10 @@
 
     <div class="vg-home-center__logo">
       {{ with resources.Get "home-logo-bottom.png" }}
-      {{ $image := .Resize "1040x" }}
-      {{ $image2x := .Resize "2080x" }}
+      {{ $width := string (div .Width 2) }}
+      {{ $image := .Resize (delimit (slice $width "x") "") }}
       <img src="{{ $image.RelPermalink }}"
-           srcset="{{ $image2x.RelPermalink }} 2x" />
+           srcset="{{ .RelPermalink }} 2x" />
       {{ end }}
     </div>
   </div>
