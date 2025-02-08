@@ -381,10 +381,6 @@ body.vg-sidebar-open {
   display: inline-block;
 }
 
-.vg-header__logo img {
-  width: 160px;
-}
-
 .vg-menu-nav {
   display: flex;
   justify-content: start;

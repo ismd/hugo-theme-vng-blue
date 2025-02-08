@@ -2,10 +2,10 @@
   <div class="vg-header__logo">
     <a href="{{ .Site.BaseURL }}">
       {{ with resources.Get "logo.png" }}
-      {{ $image := .Resize "160x" }}
-      {{ $image2x := .Resize "320x" }}      
+      {{ $width := string (div .Width 2) }}
+      {{ $image := .Resize (delimit (slice $width "x") "") }}
       <img src="{{ $image.RelPermalink }}"
-           srcset="{{ $image2x.RelPermalink }} 2x" />
+           srcset="{{ .RelPermalink }} 2x" />
       {{ end }}
     </a>
   </div>
