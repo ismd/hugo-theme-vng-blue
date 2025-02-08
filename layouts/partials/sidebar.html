@@ -5,7 +5,11 @@
     </div>
 
     <div class="vg-sidebar__logo">
-      <img src="{{ "logo-sidebar.svg" | relURL }}" alt="{{ .Site.Title }}" />
+      {{ $imageOrig := resources.Get "logo-sidebar.png" }}      
+      {{ $image2x := $imageOrig.Resize "440x440" }}
+      {{ $image := $imageOrig.Resize "220x220" }}
+      <img src="{{ $image.RelPermalink }}"
+           srcset="{{ $image2x.RelPermalink }} 2x" />
     </div>
 
     <div class="vg-sidebar__about">
