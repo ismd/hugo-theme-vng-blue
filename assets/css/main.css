@@ -84,6 +84,10 @@ body.vg-sidebar-open {
   background: var(--background-color-light);
 }
 
+.vg-page-content {
+  width: 100%;
+}
+
 .vg-page-content_with-sidebar {
   width: calc(100% - 300px);
 }
