@@ -690,10 +690,6 @@ body.vg-sidebar-open {
   align-items: center;
 }
 
-.vg-home-center__logo img {
-  width: 100%;
-}
-
 .vg-home-center_top .vg-home-center__content {
   width: 36%;
   max-width: 480px;
@@ -840,6 +836,10 @@ body.vg-sidebar-open {
   content: '';
 }
 
+.vg-home-center__logo img {
+  max-width: 100%;
+}
+
 @media (max-width: 1200px) {
   .vg-home-blog-link,
   .vg-home-blog-link:visited {
@@ -887,7 +887,7 @@ body.vg-sidebar-open {
 
   .vg-home-center .vg-home-center__logo {
     display: none;
-  }
+  }  
 
   .vg-home-center_top .vg-home-center__content {
     width: 100%;
