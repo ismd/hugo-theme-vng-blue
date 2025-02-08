@@ -1218,7 +1218,6 @@ body.vg-sidebar-open {
 }
 
 .vg-tags-list-item {
-  flex: 1;
   padding: 22px;
   border: 1px solid var(--main-color);
   font-family: var(--secondary-font);
