@@ -2,8 +2,11 @@
 <div class="vg-home">
   <div class="vg-home-center vg-home-center_top">
     <div class="vg-home-center__logo">
-      {{ with resources.Get "home-logo-top.svg" }}
-      <img src="{{ .RelPermalink }}" alt="logo" />
+      {{ with resources.Get "home-logo-top.png" }}
+      {{ $image := .Resize "800x" }}
+      {{ $image2x := .Resize "1600x" }}
+      <img src="{{ $image.RelPermalink }}"
+           srcset="{{ $image2x.RelPermalink }} 2x" />
       {{ end }}
     </div>
 
@@ -18,8 +21,11 @@
     </div>
 
     <div class="vg-home-center__logo">
-      {{ with resources.Get "home-logo-bottom.svg" }}
-      <img src="{{ .RelPermalink }}" alt="logo" />
+      {{ with resources.Get "home-logo-bottom.png" }}
+      {{ $image := .Resize "1040x" }}
+      {{ $image2x := .Resize "2080x" }}
+      <img src="{{ $image.RelPermalink }}"
+           srcset="{{ $image2x.RelPermalink }} 2x" />
       {{ end }}
     </div>
   </div>

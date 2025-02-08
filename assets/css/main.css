@@ -696,16 +696,23 @@ body.vg-sidebar-open {
 
 .vg-home-center_top .vg-home-center__content {
   width: 36%;
+  max-width: 480px;
   margin-left: 28px;
 }
 
 .vg-home-center_top .vg-home-center__logo {
   width: 60%;
+  max-width: 800px;
 }
 
 .vg-home-center_bottom .vg-home-center__content {
   width: 20%;
+  max-width: 260px; 
   margin-right: 28px;
+}
+
+.vg-home-center_bottom .vg-home-center__logo {
+  max-width: 1040px;
 }
 
 .vg-home-social {
