@@ -1,11 +1,12 @@
 <header class="vg-header{{ if .IsHome }} vg-header_home{{ end }}">
   <div class="vg-header__logo">
     <a href="{{ .Site.BaseURL }}">
-      {{ $imageOrig := resources.Get "logo.png" }}
-      {{ $image2x := $imageOrig.Resize "320x" }}
-      {{ $image := $imageOrig.Resize "160x" }}
+      {{ with resources.Get "logo.png" }}
+      {{ $image := .Resize "160x" }}
+      {{ $image2x := .Resize "320x" }}      
       <img src="{{ $image.RelPermalink }}"
            srcset="{{ $image2x.RelPermalink }} 2x" />
+      {{ end }}
     </a>
   </div>
 
