@@ -10,18 +10,20 @@
 
 ## Images
 
-On the home page there're two images: `home-logo-top.png` and `home-logo-bottom.png`:
+This theme supports HiDPI displays. It means that you should provide images with double resolution for better quality on HiDPI displays. All sizes below are for HiDPI displays.
 
-1. Optimal width for the top one is 1600px
-2. Optimal width for the bottom one is 2080px
+### Home page
 
-The width of both images mustn't be less then optimal. Put these files in `/assets` directory.
+On the home page there're two images: `home-logo-top.png` and `home-logo-bottom.png`. Their sizes can be different but the optimal are:
 
-## Icons
+1. For the top one is 1600x530
+2. For the bottom one is 2080x470
+
+### Logos
 
 There're two logos:
 
-1. In the left top corner the width of image must be at least 320px
-2. In right sidebar the width and height of image must be at least 440px/440px
+1. In the left top corner on every page the size of image can be any but recommended is 320x100
+2. In right sidebar on every page except home the size **must be** at least 440px/440px
 
-Put them in `/assets` directory with filenames `logo.png` and `logo-sidebar.png` accordingly.
+Put all of these files in `/assets` directory of your site.
