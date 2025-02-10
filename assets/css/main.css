@@ -235,11 +235,6 @@ body.vg-sidebar-open {
   text-transform: lowercase;
 }
 
-.vg-sidebar-tags__tag:hover {
-  color: var(--main-color);
-  text-decoration: none;
-}
-
 .pagination {
   display: flex;
   justify-content: end;
