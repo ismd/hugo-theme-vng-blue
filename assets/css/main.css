@@ -722,6 +722,10 @@ body.vg-sidebar-open {
   background: var(--background-color-dark);
 }
 
+.vg-home-social:hover .vg-home-social__footer {
+  text-decoration: underline;
+}
+
 .vg-home-social__header {
   height: 40px;
   background: var(--main-color);
