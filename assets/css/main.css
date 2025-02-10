@@ -1067,9 +1067,18 @@ body.vg-sidebar-open {
   text-align: center;
 }
 
+.vg-about-extended-info-tabs__tab:hover {
+  text-decoration: underline;
+}
+
 .vg-about-extended-info-tabs__tab_active {
   background: var(--background-color-dark);
   color: var(--background-color-light);
+  cursor: default;
+}
+
+.vg-about-extended-info-tabs__tab_active:hover {
+  text-decoration: none;
 }
 
 .vg-about-extended-info-tabs__content {
