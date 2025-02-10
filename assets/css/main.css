@@ -719,13 +719,16 @@ body.vg-sidebar-open {
 }
 
 .vg-home-social:hover {
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   text-decoration: none;
+}
+
+.vg-home-social:hover .vg-home-social__header {
+  background: var(--background-color-dark);
 }
 
 .vg-home-social__header {
   height: 40px;
-  background: var(--background-color-dark);
+  background: var(--main-color);
   font-family: var(--secondary-font);
   font-size: 24px;
   font-weight: 700;
