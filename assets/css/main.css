@@ -1140,8 +1140,11 @@ body.vg-sidebar-open {
 }
 
 .vg-categories-row:hover {
-  font-weight: 700;
   text-decoration: none;
+}
+
+.vg-categories-row:hover .vg-categories-row__title {
+  text-decoration: underline;
 }
 
 .vg-categories-row:hover .vg-categories-row__button {
@@ -1169,10 +1172,6 @@ body.vg-sidebar-open {
   font-weight: 700;
   letter-spacing: 1.2px;
   white-space: nowrap;
-}
-
-.vg-categories-row_selected {
-  font-weight: 700;
 }
 
 .vg-categories-row_selected .vg-categories-row__button {
