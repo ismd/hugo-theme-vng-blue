@@ -801,6 +801,10 @@ body.vg-sidebar-open {
   text-decoration: none;
 }
 
+.vg-home-blog-link:hover .vg-home-blog-link__arrow::after {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, var(--background-color-dark) 15%, var(--background-color-dark) 100%);
+}
+
 .vg-home-blog-link__text {
   position: relative;
   z-index: 100;
