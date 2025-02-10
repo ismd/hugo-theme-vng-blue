@@ -1010,7 +1010,7 @@ body.vg-sidebar-open {
 }
 
 .vg-about-mailto:hover {
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  background: var(--background-color-dark);
   text-decoration: none;
 }
 
