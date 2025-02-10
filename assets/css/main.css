@@ -677,6 +677,10 @@ body.vg-sidebar-open {
   width: 100%;
 }
 
+.vg-home-center_without-event {
+  justify-content: center;
+}
+
 .vg-home-center_bottom {
   padding-top: 4%;
 }

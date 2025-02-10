@@ -1,6 +1,6 @@
 {{ define "main" }}
 <div class="vg-home">
-  <div class="vg-home-center vg-home-center_top">
+  <div class="vg-home-center vg-home-center_top{{ if not .Site.Params.homeEventEnabled }} vg-home-center_single{{ end }}">
     <div class="vg-home-center__logo">
       {{ with resources.Get "home-logo-top.png" }}
       {{ $width := string (div .Width 2) }}
@@ -10,9 +10,11 @@
       {{ end }}
     </div>
 
+    {{ if .Site.Params.homeEventEnabled }}
     <div class="vg-home-center__content">
       {{ partial "home/home-social.html" . }}
     </div>
+    {{ end }}
   </div>
 
   <div class="vg-home-center vg-home-center_bottom">

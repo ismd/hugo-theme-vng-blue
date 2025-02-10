@@ -32,7 +32,8 @@ params:
     whatsapp: "https://whatsapp.com/"
     x: "https://x.com/"
     youtube: "https://youtube.com/"
-    
+
+  homeEventEnabled: true
   homeToBlogText: "To&nbsp;blog"
   description: "Hello! This is&nbsp;my&nbsp;personal blog about modern technologies and useful utilities."
   mailMeText: "Mail&nbsp;me"
