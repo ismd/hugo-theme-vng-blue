@@ -1243,7 +1243,9 @@ body.vg-sidebar-open {
 }
 
 .vg-tags-list-item:hover {
-  box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+  background: var(--background-color-dark);
+  color: var(--background-color-light);
+  border-color: var(--background-color-dark);
   text-decoration: none;
 }
 
