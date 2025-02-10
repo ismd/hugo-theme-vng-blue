@@ -1,4 +1,4 @@
 [module]
   [module.hugoVersion]
-    extended = false
-    min = 0.123.0
+    extended = true
+    min = "0.123.0"
