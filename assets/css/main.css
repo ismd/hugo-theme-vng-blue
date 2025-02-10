@@ -763,7 +763,7 @@ body.vg-sidebar-open {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0 5px;
+  padding: 0 6px;
   font-family: var(--secondary-font);
   font-size: 24px;
   font-weight: 700;
@@ -1252,5 +1252,7 @@ body.vg-sidebar-open {
 .vg-tags-list-item_active {
   background: var(--background-color-dark);
   color: var(--background-color-light);
+  border-color: var(--background-color-dark);
+  text-decoration: none;
 }
 /* END TAGS LIST */
