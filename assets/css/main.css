@@ -1110,6 +1110,11 @@ body.vg-sidebar-open {
   display: flex;
   padding-top: 40px;
   position: relative;
+  overflow: hidden;
+}
+
+.vg-categories_open {
+  overflow: visible;
 }
 
 .vg-categories-list {
@@ -1181,10 +1186,12 @@ body.vg-sidebar-open {
 
 .vg-categories-posts-list-wrapper {
   position: absolute;
-  top: 50px;
+  top: 40px;
   right: 0;
   bottom: 0;
   width: 40%;
+  background: var(--background-color-light);
+  z-index: 10;
 }
 
 .vg-categories-posts-list {
@@ -1203,9 +1210,9 @@ body.vg-sidebar-open {
 
 .vg-categories-posts-list .vg-categories-list__item {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 20px;
-  height: 65px;
+  min-height: 65px;
   font-size: 24px;
   letter-spacing: 1.2px;
   color: var(--main-color);
@@ -1214,6 +1221,16 @@ body.vg-sidebar-open {
 
 .vg-categories-list__item img {
   width: 100px;
+}
+
+@media (max-width: 1024px) {
+  .vg-categories-posts-list-wrapper {
+    width: 100%;
+  }
+
+  .vg-categories-posts-list {
+    padding-left: 0;
+  }
 }
 /* END CATEGORIES */
 

@@ -33,6 +33,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     // Categories list page
+    const categoriesEl = document.querySelector('.vg-categories');
     const categoriesList = document.querySelectorAll('.vg-categories-list');
     const categoriesRows = document.querySelectorAll('.vg-categories-row');
     const categoriesPostsList = document.querySelectorAll('.vg-categories-posts-list');
@@ -56,6 +57,9 @@ document.addEventListener("DOMContentLoaded", function() {
                             postsList.classList.remove('vg-categories-posts-list_selected')
                         }
                     });
+
+                    categoriesRowSelected = true;
+                    categoriesEl.classList.add('vg-categories_open');
                 }
             });
         }
@@ -99,8 +103,9 @@ document.addEventListener("DOMContentLoaded", function() {
                 }
 
                 window.history.replaceState({}, '', `${url.pathname}?${urlParams.toString()}`);
+                categoriesEl.classList.toggle('vg-categories_open', categoriesRowSelected);
             });
-        });
+        });        
     }
 
     // Tags list page
