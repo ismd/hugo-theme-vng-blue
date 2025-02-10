@@ -840,7 +840,7 @@ body.vg-sidebar-open {
   max-width: 100%;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1300px) {
   .vg-home-blog-link,
   .vg-home-blog-link:visited {
     height: 100px;
