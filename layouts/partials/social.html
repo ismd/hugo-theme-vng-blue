@@ -7,6 +7,14 @@
   </a>
   {{ end }}
 
+  {{ if .Site.Params.social.email }}
+  <a class="vg-social__item" href="{{ .Site.Params.social.email }}" title="E-mail" target="_blank">
+    {{ with resources.Get "icons/social/email.svg" }}
+    {{ .Content | safeHTML }}
+    {{ end }}
+  </a>
+  {{ end }}
+
   {{ if .Site.Params.social.facebook }}
   <a class="vg-social__item" href="{{ .Site.Params.social.facebook }}" title="Facebook" target="_blank">
     {{ with resources.Get "icons/social/facebook.svg" }}
@@ -18,6 +26,14 @@
   {{ if .Site.Params.social.github }}
   <a class="vg-social__item" href="{{ .Site.Params.social.github }}" title="GitHub" target="_blank">
     {{ with resources.Get "icons/social/github.svg" }}
+    {{ .Content | safeHTML }}
+    {{ end }}
+  </a>
+  {{ end }}
+
+  {{ if .Site.Params.social.googleDrive }}
+  <a class="vg-social__item" href="{{ .Site.Params.social.googleDrive }}" title="Google Drive" target="_blank">
+    {{ with resources.Get "icons/social/google-drive.svg" }}
     {{ .Content | safeHTML }}
     {{ end }}
   </a>
@@ -39,6 +55,94 @@
   </a>
   {{ end }}
 
+  {{ if .Site.Params.social.medium }}
+  <a class="vg-social__item" href="{{ .Site.Params.social.medium }}" title="Medium" target="_blank">
+    {{ with resources.Get "icons/social/medium.svg" }}
+    {{ .Content | safeHTML }}
+    {{ end }}
+  </a>
+  {{ end }}
+
+  {{ if .Site.Params.social.netflix }}
+  <a class="vg-social__item" href="{{ .Site.Params.social.netflix }}" title="Netflix" target="_blank">
+    {{ with resources.Get "icons/social/netflix.svg" }}
+    {{ .Content | safeHTML }}
+    {{ end }}
+  </a>
+  {{ end }}
+
+  {{ if .Site.Params.social.paypal }}
+  <a class="vg-social__item" href="{{ .Site.Params.social.paypal }}" title="PayPal" target="_blank">
+    {{ with resources.Get "icons/social/paypal.svg" }}
+    {{ .Content | safeHTML }}
+    {{ end }}
+  </a>
+  {{ end }}
+
+  {{ if .Site.Params.social.pinterest }}
+  <a class="vg-social__item" href="{{ .Site.Params.social.pinterest }}" title="Pinterest" target="_blank">
+    {{ with resources.Get "icons/social/pinterest.svg" }}
+    {{ .Content | safeHTML }}
+    {{ end }}
+  </a>
+  {{ end }}
+
+  {{ if .Site.Params.social.podcast }}
+  <a class="vg-social__item" href="{{ .Site.Params.social.podcast }}" title="Podcast" target="_blank">
+    {{ with resources.Get "icons/social/podcast.svg" }}
+    {{ .Content | safeHTML }}
+    {{ end }}
+  </a>
+  {{ end }}
+
+  {{ if .Site.Params.social.quora }}
+  <a class="vg-social__item" href="{{ .Site.Params.social.quora }}" title="Quora" target="_blank">
+    {{ with resources.Get "icons/social/quora.svg" }}
+    {{ .Content | safeHTML }}
+    {{ end }}
+  </a>
+  {{ end }}
+
+  {{ if .Site.Params.social.reddit }}
+  <a class="vg-social__item" href="{{ .Site.Params.social.reddit }}" title="Reddit" target="_blank">
+    {{ with resources.Get "icons/social/reddit.svg" }}
+    {{ .Content | safeHTML }}
+    {{ end }}
+  </a>
+  {{ end }}
+
+  {{ if .Site.Params.social.signal }}
+  <a class="vg-social__item" href="{{ .Site.Params.social.signal }}" title="Signal" target="_blank">
+    {{ with resources.Get "icons/social/signal.svg" }}
+    {{ .Content | safeHTML }}
+    {{ end }}
+  </a>
+  {{ end }}
+
+  {{ if .Site.Params.social.snapchat }}
+  <a class="vg-social__item" href="{{ .Site.Params.social.snapchat }}" title="Snapchat" target="_blank">
+    {{ with resources.Get "icons/social/snapchat.svg" }}
+    {{ .Content | safeHTML }}
+    {{ end }}
+  </a>
+  {{ end }}
+
+  {{ if .Site.Params.social.spotify }}
+  <a class="vg-social__item" href="{{ .Site.Params.social.spotify }}" title="Spotify" target="_blank">
+    {{ with resources.Get "icons/social/spotify.svg" }}
+    {{ .Content | safeHTML }}
+    {{ end }}
+  </a>
+  {{ end }}
+
+  {{ if .Site.Params.social.substack }}
+  <a class="vg-social__item" href="{{ .Site.Params.social.substack }}" title="Substack" target="_blank">
+    {{ with resources.Get "icons/social/substack.svg" }}
+    {{ .Content | safeHTML }}
+    {{ end }}
+  </a>
+  {{ end }}
+
   {{ if .Site.Params.social.telegram }}
   <a class="vg-social__item" href="{{ .Site.Params.social.telegram }}" title="Telegram" target="_blank">
     {{ with resources.Get "icons/social/telegram.svg" }}
@@ -47,9 +151,65 @@
   </a>
   {{ end }}
 
+  {{ if .Site.Params.social.threads }}
+  <a class="vg-social__item" href="{{ .Site.Params.social.threads }}" title="Threads" target="_blank">
+    {{ with resources.Get "icons/social/threads.svg" }}
+    {{ .Content | safeHTML }}
+    {{ end }}
+  </a>
+  {{ end }}
+
+  {{ if .Site.Params.social.tiktok }}
+  <a class="vg-social__item" href="{{ .Site.Params.social.tiktok }}" title="TikTok" target="_blank">
+    {{ with resources.Get "icons/social/tiktok.svg" }}
+    {{ .Content | safeHTML }}
+    {{ end }}
+  </a>
+  {{ end }}
+
+  {{ if .Site.Params.social.tumblr }}
+  <a class="vg-social__item" href="{{ .Site.Params.social.tumblr }}" title="Tumblr" target="_blank">
+    {{ with resources.Get "icons/social/tumblr.svg" }}
+    {{ .Content | safeHTML }}
+    {{ end }}
+  </a>
+  {{ end }}
+
   {{ if .Site.Params.social.twitch }}
   <a class="vg-social__item" href="{{ .Site.Params.social.twitch }}" title="Twitch" target="_blank">
     {{ with resources.Get "icons/social/twitch.svg" }}
+    {{ .Content | safeHTML }}
+    {{ end }}
+  </a>
+  {{ end }}
+
+  {{ if .Site.Params.social.viber }}
+  <a class="vg-social__item" href="{{ .Site.Params.social.viber }}" title="Viber" target="_blank">
+    {{ with resources.Get "icons/social/viber.svg" }}
+    {{ .Content | safeHTML }}
+    {{ end }}
+  </a>
+  {{ end }}
+
+  {{ if .Site.Params.social.vimeo }}
+  <a class="vg-social__item" href="{{ .Site.Params.social.vimeo }}" title="Vimeo" target="_blank">
+    {{ with resources.Get "icons/social/vimeo.svg" }}
+    {{ .Content | safeHTML }}
+    {{ end }}
+  </a>
+  {{ end }}
+
+  {{ if .Site.Params.social.vk }}
+  <a class="vg-social__item" href="{{ .Site.Params.social.vk }}" title="VK" target="_blank">
+    {{ with resources.Get "icons/social/vk.svg" }}
+    {{ .Content | safeHTML }}
+    {{ end }}
+  </a>
+  {{ end }}
+
+  {{ if .Site.Params.social.wechat }}
+  <a class="vg-social__item" href="{{ .Site.Params.social.wechat }}" title="WeChat" target="_blank">
+    {{ with resources.Get "icons/social/wechat.svg" }}
     {{ .Content | safeHTML }}
     {{ end }}
   </a>
@@ -80,7 +240,7 @@
   {{ end }}
 
   {{ with .Site.GetPage "section" "posts" }}
-  {{ with .OutputFormats.Get "rss" -}}
+  {{ with .OutputFormats.Get "rss" }}
   <a class="vg-social__item" href="{{ .Permalink }}" title="RSS" target="_blank">
     {{ with resources.Get "icons/social/rss.svg" }}
     {{ .Content | safeHTML }}
