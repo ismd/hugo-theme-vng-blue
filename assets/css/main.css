@@ -1139,7 +1139,7 @@ body.vg-sidebar-open {
 .vg-categories-list {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 20px;
   background: var(--background-color-light);
 }
 
@@ -1186,11 +1186,20 @@ body.vg-sidebar-open {
   letter-spacing: 1.2px;
 }
 
-.vg-categories-list .vg-posts-list {
-  padding: 0;
+.vg-categories-posts-list {
   height: 0;
+  padding-left: 60px;
   overflow: hidden;
   transition: height 0.7s;
+}
+
+.vg-categories-posts-list__item {
+  margin-bottom: 30px;
+}
+
+.vg-categories-posts-list__text {
+  font-size: 20px;
+  color: var(--main-color);
 }
 
 @media (max-width: 768px) {

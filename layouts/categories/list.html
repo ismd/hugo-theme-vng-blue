@@ -12,9 +12,11 @@
       <div class="vg-categories-row__title">{{ .Name }}</div>
     </a>
 
-    <div class="vg-posts-list">
+    <div class="vg-categories-posts-list">
       {{ range .Pages }}
-      {{ partial "post.html" (dict "post" . "hideCategory" true) }}
+      <div class="vg-categories-posts-list__item" data-target="{{ .Name }}">
+        <a href="{{ .RelPermalink }}" class="vg-categories-posts-list__text">{{ .Title }}</a>
+      </div>
       {{ end }}
     </div>
     {{ end }}
