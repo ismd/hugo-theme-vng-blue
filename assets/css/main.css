@@ -1167,7 +1167,7 @@ body.vg-sidebar-open {
   height: 24px;
   fill: var(--background-color-dark);
   transform: rotate(270deg);
-  transition: transform 0.3s ease;
+  transition: transform 0.7s;
 }
 
 .vg-categories-row__icon svg {
@@ -1190,7 +1190,7 @@ body.vg-sidebar-open {
   padding: 0;
   height: 0;
   overflow: hidden;
-  transition: height 1s ease;
+  transition: height 0.7s;
 }
 
 @media (max-width: 768px) {
