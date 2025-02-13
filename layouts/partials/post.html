@@ -1,5 +1,6 @@
 {{- $post := .post }}
 {{- $full := .full }}
+{{- $hideCategory := .hideCategory }}
 
 {{ with $post }}
 <div class="vg-post{{ if $full }} vg-post_full{{ end }}" data-tags="{{ delimit .Params.tags " " }}">
@@ -18,7 +19,7 @@
     {{ end }}
 
     <div class="vg-post__summary">
-      {{ if .Params.categories }}
+      {{ if and (not $hideCategory) .Params.categories }}
       {{ $category := index .Params.categories 0 }}
       <div class="vg-post__category">
         <a href="{{ printf "categories/?category=%s" ($category | urlquery) | relURL }}">{{ $category }}</a>

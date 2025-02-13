@@ -33,79 +33,28 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     // Categories list page
-    const categoriesEl = document.querySelector('.vg-categories');
     const categoriesList = document.querySelectorAll('.vg-categories-list');
     const categoriesRows = document.querySelectorAll('.vg-categories-row');
-    const categoriesPostsList = document.querySelectorAll('.vg-categories-posts-list');
-    let categoriesRowSelected = false;
 
-    if (categoriesList?.[0]) {
-        // Check if tags are selected in URL
-        const url = new URL(window.location.href);
-        const urlParams = new URLSearchParams(url.search);
-        let urlCategory = urlParams.get('category');
-
-        if (urlCategory) {
-            categoriesRows.forEach(row => {
-                if (row.dataset.target === urlCategory) {
-                    row.classList.add('vg-categories-row_selected');
-                    categoriesPostsList.forEach(postsList => {
-                        if (postsList.dataset.id === urlCategory) {
-                            postsList.classList.add('vg-categories-posts-list_selected')
-                            categoriesList[0].classList.add('vg-categories-list_open');
-                        } else {
-                            postsList.classList.remove('vg-categories-posts-list_selected')
-                        }
-                    });
-
-                    categoriesRowSelected = true;
-                    categoriesEl.classList.add('vg-categories_open');
-                }
-            });
-        }
-
+    if (categoriesList) {
         categoriesRows.forEach(row => {
             row.addEventListener('click', () => {
-                if (!categoriesRowSelected) {
-                    row.classList.add('vg-categories-row_selected');
-
-                    categoriesPostsList.forEach(postsList => {
-                        if (postsList.dataset.id === row.dataset.target) {
-                            postsList.classList.add('vg-categories-posts-list_selected')
-                        } else {
-                            postsList.classList.remove('vg-categories-posts-list_selected')
-                        }
-                    });
-
-                    categoriesList[0].classList.add('vg-categories-list_open');
-                    categoriesRowSelected = true;
-                    urlParams.set('category', row.dataset.target);
-                } else {
-                    if (row.classList.contains('vg-categories-row_selected')) {
-                        row.classList.remove('vg-categories-row_selected');
-                        categoriesList[0].classList.remove('vg-categories-list_open');
-                        categoriesRowSelected = false;
-                        urlParams.delete('category');
-                    } else {
-                        categoriesRows.forEach(row => row.classList.remove('vg-categories-row_selected'));
-                        row.classList.add('vg-categories-row_selected');
-
-                        categoriesPostsList.forEach(postsList => {
-                            if (postsList.dataset.id === row.dataset.target) {
-                                postsList.classList.add('vg-categories-posts-list_selected')
-                            } else {
-                                postsList.classList.remove('vg-categories-posts-list_selected')
-                            }
-                        });
-
-                        urlParams.set('category', row.dataset.target);
+                categoriesRows.forEach(rowAll => {
+                    if (rowAll !== row) {
+                        rowAll.nextElementSibling.style.height = 0;
+                        rowAll.classList.remove('vg-categories-row_open');
                     }
-                }
+                });
 
-                window.history.replaceState({}, '', `${url.pathname}?${urlParams.toString()}`);
-                categoriesEl.classList.toggle('vg-categories_open', categoriesRowSelected);
+                if (row.classList.contains('vg-categories-row_open')) {
+                    row.classList.remove('vg-categories-row_open');
+                    row.nextElementSibling.style.height = 0;
+                } else {
+                    row.nextElementSibling.style.height = row.nextElementSibling.scrollHeight + 'px';
+                    row.classList.add('vg-categories-row_open');
+                }
             });
-        });        
+        });
     }
 
     // Tags list page

@@ -3,24 +3,18 @@
   <div class="vg-categories-list">
     {{ range .Pages }}
     <a href="javascript:void(0);" class="vg-categories-row" data-target="{{ .Name }}">
-      <div class="vg-categories-row__title">{{ .Name }}</div>
-      <div class="vg-categories-row__button">{{ .Site.Params.categoriesToPostsText | safeHTML }}</div>
-    </a>
-    {{ end }}
-  </div>
-
-  <div class="vg-categories-posts-list-wrapper">
-    {{ range .Pages }}
-    <div data-id="{{ .Name }}" class="vg-categories-posts-list">
-      {{ range .Pages }}
-      <a href="{{ .RelPermalink }}" class="vg-categories-list__item">
-        {{ with .Resources.GetMatch "cover.png" }}
-        {{ $resized := .Fill "200x130" }}
-        <img src="{{ $resized.RelPermalink }}" alt="{{ .Title }}" class="vg-categories-list__item-image" />
+      <div class="vg-categories-row__icon">
+        {{ with resources.GetMatch "icons/menu.svg" }}
+        {{ .Content | safeHTML }}
         {{ end }}
+      </div>
 
-        {{ .Title }}
-      </a>
+      <div class="vg-categories-row__title">{{ .Name }}</div>
+    </a>
+
+    <div class="vg-posts-list">
+      {{ range .Pages }}
+      {{ partial "post.html" (dict "post" . "hideCategory" true) }}
       {{ end }}
     </div>
     {{ end }}

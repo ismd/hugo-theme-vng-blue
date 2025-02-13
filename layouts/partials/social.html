@@ -8,7 +8,7 @@
   {{ end }}
 
   {{ if .Site.Params.social.email }}
-  <a class="vg-social__item" href="{{ .Site.Params.social.email }}" title="E-mail" target="_blank">
+  <a class="vg-social__item" href="{{ .Site.Params.social.email }}" title="Email" target="_blank">
     {{ with resources.Get "icons/social/email.svg" }}
     {{ .Content | safeHTML }}
     {{ end }}
