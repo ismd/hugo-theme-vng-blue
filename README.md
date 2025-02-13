@@ -8,6 +8,15 @@
 
 ## Configuration
 
+It's possible to configure different styles for the home page. The following parameters are available:
+
+```yaml
+homeEventPosition: "top" # "top" or "bottom" or "none"
+homeToBlogText: "To&nbsp;blog"
+```
+
+TODO: screenshots
+
 ## Images
 
 This theme supports HiDPI displays. It means that you should provide images with double resolution for better quality on HiDPI displays. All sizes below are for HiDPI displays.
