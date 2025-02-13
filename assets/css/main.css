@@ -1132,14 +1132,14 @@ body.vg-sidebar-open {
 /* CATEGORIES */
 .vg-categories {
   display: flex;
-  padding-top: 40px;
+  padding-top: 60px;
   position: relative;
 }
 
 .vg-categories-list {
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 30px;
   background: var(--background-color-light);
 }
 
@@ -1168,6 +1168,11 @@ body.vg-sidebar-open {
   fill: var(--background-color-dark);
   transform: rotate(270deg);
   transition: transform 0.3s ease;
+}
+
+.vg-categories-row__icon svg {
+  width: 24px;
+  height: 24px;
 }
 
 .vg-categories-row_open .vg-categories-row__icon {
