@@ -85,7 +85,11 @@ body.vg-sidebar-open {
 }
 
 .vg-page-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   width: 100%;
+  min-height: 100vh;
 }
 
 .vg-page-content_with-sidebar {
@@ -94,7 +98,6 @@ body.vg-sidebar-open {
 
 .vg-main {
   display: flex;
-  min-height: calc(100vh - 200px);
   padding-bottom: 10px;
   box-sizing: border-box;
 }
@@ -144,11 +147,13 @@ body.vg-sidebar-open {
   right: 0;
   display: flex;
   align-items: center;
-  justify-content: center;
-  height: 80px;
-  min-height: 80px;
-  padding: 0 24px;
+  justify-content: center;  
   background: var(--main-color);
+}
+
+.vg-sidebar-footer .vg-social {
+  min-height: 80px;
+  padding: 24px;
 }
 
 .vg-social {
@@ -156,15 +161,13 @@ body.vg-sidebar-open {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  width: 100%;
-  height: 100%;
+  gap: 5px;
   box-sizing: border-box;
 }
 
 .vg-social__item {
   display: flex;
   width: 32px;
-  margin: 0 5px;
 }
 
 .vg-social__item svg {
@@ -481,13 +484,14 @@ body.vg-sidebar-open {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100px;
+  min-height: 100px;
   text-align: center;
 }
 
 .vg-footer .vg-social {
   display: none;
   align-items: end;
+  padding: 0 24px;
 }
 
 .vg-footer_home .vg-social {
