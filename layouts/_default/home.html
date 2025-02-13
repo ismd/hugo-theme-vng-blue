@@ -1,6 +1,7 @@
 {{ define "main" }}
+{{ $eventPosition := default "none" .Site.Params.homeEventPosition }}
 <div class="vg-home">
-  <div class="vg-home-center vg-home-center_top{{ if not .Site.Params.homeEventEnabled }} vg-home-center_single{{ end }}">
+  <div class="vg-home-center vg-home-center_top{{ if ne $eventPosition "top" }} vg-home-center_without-event{{ end }}">
     <div class="vg-home-center__logo">
       {{ with resources.Get "home-logo-top.png" }}
       {{ $width := string (div .Width 2) }}
@@ -10,7 +11,7 @@
       {{ end }}
     </div>
 
-    {{ if .Site.Params.homeEventEnabled }}
+    {{ if eq $eventPosition "top" }}
     <div class="vg-home-center__content">
       {{ partial "home/home-social.html" . }}
     </div>
@@ -18,10 +19,17 @@
   </div>
 
   <div class="vg-home-center vg-home-center_bottom">
+    {{ if eq $eventPosition "bottom" }}
+    <div class="vg-home-center__content">
+      {{ partial "home/home-social.html" . }}
+    </div>
+    {{ end }}
+
     <div class="vg-home-center__content">
       {{ partial "home/home-blog-link.html" . }}
     </div>
 
+    {{ if ne $eventPosition "bottom" }}
     <div class="vg-home-center__logo">
       {{ with resources.Get "home-logo-bottom.png" }}
       {{ $width := string (div .Width 2) }}
@@ -30,6 +38,7 @@
            srcset="{{ .RelPermalink }} 2x" />
       {{ end }}
     </div>
+    {{ end }}
   </div>
 
   <div class="vg-home__content">
