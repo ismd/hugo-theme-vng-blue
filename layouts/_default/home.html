@@ -30,14 +30,14 @@
     </div>
 
     {{ if ne $eventPosition "bottom" }}
+    {{ with resources.Get "home-logo-bottom.png" }}
     <div class="vg-home-center__logo">
-      {{ with resources.Get "home-logo-bottom.png" }}
       {{ $width := string (div .Width 2) }}
       {{ $image := .Resize (delimit (slice $width "x") "") }}
       <img src="{{ $image.RelPermalink }}"
-           srcset="{{ .RelPermalink }} 2x" />
-      {{ end }}
+           srcset="{{ .RelPermalink }} 2x" />      
     </div>
+    {{ end }}
     {{ end }}
   </div>
 
