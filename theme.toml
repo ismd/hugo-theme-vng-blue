@@ -4,7 +4,6 @@ licenselink = "https://github.com/ismd/hugo-theme-vng-blue/blob/master/LICENSE"
 description = "Everything you need to create a well-structured blog with categories, tags, and beautiful links"
 
 homepage = "https://github.com/ismd/hugo-theme-vng-blue"
-
 demosite = "https://ismd.github.io/demo-hugo-theme-vng-blue/"
 
 tags = ["responsive", "blog", "light", "personal"]

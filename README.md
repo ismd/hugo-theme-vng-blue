@@ -4,7 +4,6 @@
 
 ## Features
 
-This theme supports the following features:
 - Responsive design
 - Home page with different layouts
 - Categories and tags
@@ -29,21 +28,21 @@ homeToBlogText: "To&nbsp;blog"
 #### Screenshots
 
 homeEventPosition: "top"
-![Home page with event on top](screenshots/home-full.png)
+![Home page with event on top](images/screenshot.png)
 
 homeEventPosition: "bottom"
-![Home page with event on bottom](screenshots/home-event-bottom.png)
+![Home page with event on bottom](images/home-event-bottom.png)
 
 homeEventPosition: "none"
-![Home page without event](screenshots/home-no-event.png)
+![Home page without event](images/home-no-event.png)
 
 Also you can hide bottom logo on the home page. To do this remove `assets/home-logo-bottom.png` file. It will look like this:
 
 homeEventPosition: "top"
-![Home page without bottom logo](screenshots/home-no-bottom-logo.png)
+![Home page without bottom logo](images/home-no-bottom-logo.png)
 
 homeEventPosition: "none"
-![Home page without bottom logo and event](screenshots/home-no-event-and-bottom-logo.png)
+![Home page without bottom logo and event](images/home-no-event-and-bottom-logo.png)
 
 ## Images
 
