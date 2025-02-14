@@ -1232,7 +1232,7 @@ body.vg-sidebar-open {
   text-align: center;
 }
 
-.vg-tags-list-item:hover {
+.vg-tags-list-item:active {
   background: var(--background-color-dark);
   color: var(--background-color-light);
   border-color: var(--background-color-dark);
