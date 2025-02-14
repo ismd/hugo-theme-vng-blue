@@ -12,6 +12,10 @@
 
 ## Installation
 
+```bash
+git submodule add https://github.com/ismd/hugo-theme-vng-blue.git themes/vng-blue
+```
+
 ## Configuration
 
 See [demo project configuration](https://github.com/ismd/demo-hugo-theme-vng-blue) for example of configuration.
