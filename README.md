@@ -28,21 +28,21 @@ homeToBlogText: "To&nbsp;blog"
 #### Screenshots
 
 homeEventPosition: "top"
-![Home page with event on top](images/screenshot.png)
+![Home page with event on top](https://github.com/ismd/hugo-theme-vng-blue/raw/main/images/screenshot.png)
 
 homeEventPosition: "bottom"
-![Home page with event on bottom](images/home-event-bottom.png)
+![Home page with event on bottom](https://github.com/ismd/hugo-theme-vng-blue/raw/main/images/home-event-bottom.png)
 
 homeEventPosition: "none"
-![Home page without event](images/home-no-event.png)
+![Home page without event](https://github.com/ismd/hugo-theme-vng-blue/raw/main/images/home-no-event.png)
 
 Also you can hide bottom logo on the home page. To do this remove `assets/home-logo-bottom.png` file. It will look like this:
 
 homeEventPosition: "top"
-![Home page without bottom logo](images/home-no-bottom-logo.png)
+![Home page without bottom logo](https://github.com/ismd/hugo-theme-vng-blue/raw/main/images/home-no-bottom-logo.png)
 
 homeEventPosition: "none"
-![Home page without bottom logo and event](images/home-no-event-and-bottom-logo.png)
+![Home page without bottom logo and event](https://github.com/ismd/hugo-theme-vng-blue/raw/main/images/home-no-event-and-bottom-logo.png)
 
 ## Images
 
