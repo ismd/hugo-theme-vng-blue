@@ -3,7 +3,7 @@
 {{- $hideCategory := .hideCategory }}
 
 {{ with $post }}
-<div class="vg-post{{ if $full }} vg-post_full{{ end }}" data-tags="{{ delimit .Params.tags " " }}">
+<div class="vg-post{{ if $full }} vg-post_full{{ end }}" data-tags="{{ with .Params.tags }}{{ delimit . " " }}{{ end }}">
   <div class="vg-post__content">
     {{ with $post.Resources.GetMatch "cover.png" }}
     {{ $resized := .Resize "800x" }}
