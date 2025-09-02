@@ -2,4 +2,8 @@
 <div class="vg-post-page">
   {{ partial "post.html" (dict "full" true "post" .) }}
 </div>
+
+{{ if .Site.Params.giscus.enable }}
+<div class="giscus"></div>
+{{ end }}
 {{ end }}
