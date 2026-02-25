@@ -28,7 +28,12 @@
     </div>
   </div>
 
-  <a href="mailto:{{ .Params.email }}" class="vg-about-mailto">{{ default "Mail&nbsp;me" .Site.Params.mailMeText | safeHTML }}</a>
+  <div class="vg-about-links">
+    <a href="mailto:{{ .Params.email }}" class="vg-about-mailto">{{ default "Mail&nbsp;me" .Site.Params.mailMeText | safeHTML }}</a>
+    {{ with .Site.Params.social.telegram }}
+    <a href="{{ . }}" class="vg-about-mailto" target="_blank">Telegram</a>
+    {{ end }}
+  </div>
 
   <div class="vg-about-extended-info">
     <div class="vg-about-extended-info__column">
