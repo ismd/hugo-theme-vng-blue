@@ -37,3 +37,7 @@
 {{ printf `<link rel=%q type=%q href=%q title=%q>` .Rel .MediaType.Type .Permalink site.Title | safeHTML }}
 {{ end }}
 {{ end }}
+
+{{ if in (slice "categories" "tags") .Section }}
+<meta name="robots" content="noindex, follow" />
+{{ end }}
