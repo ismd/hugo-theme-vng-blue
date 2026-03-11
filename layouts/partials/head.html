@@ -2,6 +2,16 @@
 <meta name="viewport" content="width=device-width">
 <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ printf "%s | %s" .Title site.Title }}{{ end }}</title>
 
+{{- if .IsHome -}}
+{{- with .Site.Params.description }}
+<meta name="description" content="{{ . | plainify | htmlUnescape }}">
+{{- end -}}
+{{- else -}}
+{{- with .Description | default .Summary }}
+<meta name="description" content="{{ . | plainify | htmlUnescape | truncate 160 }}">
+{{- end -}}
+{{- end }}
+
 {{ with .Site.Params.custom_script_inline }}
 {{ . | safeHTML }}
 {{ end }}
