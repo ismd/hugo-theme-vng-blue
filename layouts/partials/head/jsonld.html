@@ -1,0 +1,37 @@
+{{- if .IsPage -}}
+{{- $description := .Description | default .Summary | plainify | htmlUnescape | truncate 160 -}}
+{{- $article := dict
+  "@context" "https://schema.org"
+  "@type" "Article"
+  "headline" .Title
+  "description" $description
+  "url" .Permalink
+  "datePublished" (.Date.Format "2006-01-02T15:04:05-07:00")
+  "dateModified" (.Lastmod.Format "2006-01-02T15:04:05-07:00")
+  "author" (dict "@type" "Person" "name" "Владимир" "url" ("about/" | absURL))
+  "publisher" (dict "@type" "Organization" "name" site.Title "url" site.BaseURL)
+  "mainEntityOfPage" (dict "@type" "WebPage" "@id" .Permalink)
+-}}
+{{- with .Resources.GetMatch "cover.png" -}}
+  {{- $article = merge $article (dict "image" .Permalink) -}}
+{{- end -}}
+<script type="application/ld+json">{{ $article | jsonify | safeJS }}</script>
+{{- end }}
+
+{{- if not .IsHome -}}
+{{- $items := slice
+  (dict "@type" "ListItem" "position" 1 "name" site.Title "item" site.BaseURL)
+-}}
+{{- if .Section -}}
+  {{- $items = $items | append (dict "@type" "ListItem" "position" 2 "name" (.Section | title) "item" (print .Section "/" | absURL)) -}}
+{{- end -}}
+{{- if .IsPage -}}
+  {{- $items = $items | append (dict "@type" "ListItem" "position" 3 "name" .Title "item" .Permalink) -}}
+{{- end -}}
+{{- $breadcrumb := dict
+  "@context" "https://schema.org"
+  "@type" "BreadcrumbList"
+  "itemListElement" $items
+-}}
+<script type="application/ld+json">{{ $breadcrumb | jsonify | safeJS }}</script>
+{{- end }}
