@@ -2,7 +2,7 @@
 <div class="vg-categories">
   <div class="vg-categories-list">
     {{ range .Pages }}
-    <a href="javascript:void(0);" class="vg-categories-row" data-target="{{ .Name }}">
+    <a href="{{ .RelPermalink }}" class="vg-categories-row" data-target="{{ .Name }}">
       <div class="vg-categories-row__icon">
         {{ with resources.GetMatch "icons/menu.svg" }}
         {{ .Content | safeHTML }}

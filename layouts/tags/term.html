@@ -1,0 +1,15 @@
+{{ define "main" }}
+<div class="vg-tags-list" data-current-tag="{{ .Name }}">
+  {{ range .Site.Taxonomies.tags.ByCount }}
+  {{ with $.Site.GetPage (printf "/tags/%s" .Name) }}
+  <a href="{{ .RelPermalink }}" class="vg-tags-list-item{{ if eq $.Name .Name }} vg-tags-list-item_active{{ end }}" data-tag="{{ .Name }}">{{ .Name }}</a>
+  {{ end }}
+  {{ end }}
+</div>
+
+<div class="vg-posts-list">
+  {{ range .Pages }}
+  {{ partial "post.html" (dict "post" .) }}
+  {{ end }}
+</div>
+{{ end }}

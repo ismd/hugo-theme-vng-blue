@@ -1,0 +1,11 @@
+{{ define "main" }}
+<h1 class="vg-term-title">{{ .Title }}</h1>
+
+<div class="vg-posts-list">
+  {{ range .Paginator.Pages }}
+  {{ partial "post.html" (dict "post" .) }}
+  {{ end }}
+
+  {{ template "_internal/pagination.html" (dict "page" . "format" "terse") }}
+</div>
+{{ end }}

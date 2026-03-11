@@ -38,7 +38,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
     if (categoriesList) {
         categoriesRows.forEach(row => {
-            row.addEventListener('click', () => {
+            row.addEventListener('click', (e) => {
+                e.preventDefault();
+
                 categoriesRows.forEach(rowAll => {
                     if (rowAll !== row) {
                         rowAll.nextElementSibling.style.height = 0;
@@ -57,16 +59,36 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    // Tags list page
-    const selectedTags = new Set();
-    const tagsList = document.querySelectorAll('.vg-tags-list-item');
-    const postsList = document.querySelectorAll('.vg-post');
+    // Tag term page (/tags/linux/) — redirect to /tags/?tags=a,b on second tag click
+    const termTagsList = document.querySelector('.vg-tags-list[data-current-tag]');
 
-    if (tagsList) {
-        // Check if tags are selected in URL
+    if (termTagsList) {
+        const currentTag = termTagsList.getAttribute('data-current-tag');
+
+        termTagsList.querySelectorAll('.vg-tags-list-item').forEach(tag => {
+            tag.addEventListener('click', (e) => {
+                const clickedTag = tag.getAttribute('data-tag');
+                if (clickedTag === currentTag) return; // follow the link (deselect = reload same page)
+
+                e.preventDefault();
+                window.location.href = '/tags/?tags=' + encodeURIComponent(currentTag) + ',' + encodeURIComponent(clickedTag);
+            });
+        });
+    }
+
+    // Tags list page (/tags/ only — with JS filtering)
+    const tagsPageList = document.querySelector('.vg-posts-list_toggleable');
+
+    if (tagsPageList) {
+        const selectedTags = new Set();
+        const tagsList = document.querySelectorAll('.vg-tags-list-item');
+        const postsList = tagsPageList.querySelectorAll('.vg-post');
+        const tagsBasePath = '/tags/';
+
+        // Check if tags are selected in URL (?tags=linux,security)
         const url = new URL(window.location.href);
         const urlParams = new URLSearchParams(url.search);
-        let urlTags = urlParams.get('tags') ? urlParams.get('tags').split(',') : [];
+        const urlTags = urlParams.get('tags') ? urlParams.get('tags').split(',') : [];
 
         if (urlTags.length > 0) {
             tagsList.forEach(tag => {
@@ -77,49 +99,49 @@ document.addEventListener("DOMContentLoaded", function() {
                 }
             });
 
-            postsList.forEach(post => {
-                const tags = post.getAttribute('data-tags').split(' ');
-                const visible = urlTags.every(tag => tags.includes(tag));
-
-                post.classList.toggle('vg-post_visible', visible);
-            });
+            filterPosts();
         }
 
         tagsList.forEach(tag => {
-            tag.addEventListener('click', () => {
+            tag.addEventListener('click', (e) => {
+                e.preventDefault();
+
                 tag.classList.toggle('vg-tags-list-item_active');
 
                 const currentTag = tag.getAttribute('data-tag');
 
                 if (selectedTags.has(currentTag)) {
                     selectedTags.delete(currentTag);
-                    urlTags = urlTags.filter(t => t !== currentTag);
                 } else {
                     selectedTags.add(currentTag);
-                    urlTags.push(currentTag);
                 }
 
-                if (urlTags.length > 0) {
-                    urlParams.set('tags', urlTags.join(','));
+                // Update URL
+                const tags = Array.from(selectedTags);
+                if (tags.length === 0) {
+                    window.history.replaceState({}, '', tagsBasePath);
+                } else if (tags.length === 1) {
+                    window.history.replaceState({}, '', tagsBasePath + tags[0] + '/');
                 } else {
-                    urlParams.delete('tags');
+                    window.history.replaceState({}, '', tagsBasePath + '?tags=' + tags.join(','));
                 }
 
-                window.history.replaceState({}, '', `${url.pathname}?${urlParams.toString()}`);
-
-                // Update visible posts
-                if (selectedTags.size === 0) {
-                    postsList.forEach(post => post.classList.remove('vg-post_visible'));
-                    return;
-                }
-
-                postsList.forEach(post => {
-                    const tags = post.getAttribute('data-tags').split(' ');
-                    const visible = Array.from(selectedTags).every(tag => tags.includes(tag));
-
-                    post.classList.toggle('vg-post_visible', visible);
-                });
+                filterPosts();
             });
         });
+
+        function filterPosts() {
+            if (selectedTags.size === 0) {
+                postsList.forEach(post => post.classList.remove('vg-post_visible'));
+                return;
+            }
+
+            postsList.forEach(post => {
+                const tags = post.getAttribute('data-tags').split(' ');
+                const visible = Array.from(selectedTags).every(tag => tags.includes(tag));
+
+                post.classList.toggle('vg-post_visible', visible);
+            });
+        }
     }
 });

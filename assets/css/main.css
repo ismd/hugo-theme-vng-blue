@@ -1255,4 +1255,10 @@ body.vg-sidebar-open {
   border-color: var(--background-color-dark);
   text-decoration: none;
 }
+
+.vg-term-title {
+  font-family: var(--secondary-font);
+  color: var(--main-color);
+  margin-bottom: 30px;
+}
 /* END TAGS LIST */

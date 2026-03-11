@@ -22,7 +22,9 @@
       {{ if and (not $hideCategory) .Params.categories }}
       {{ $category := index .Params.categories 0 }}
       <div class="vg-post__category">
-        <a href="{{ printf "categories/?category=%s" ($category | urlquery) | relURL }}">{{ $category }}</a>
+        {{ with site.GetPage (printf "/categories/%s" $category) }}
+        <a href="{{ .RelPermalink }}">{{ $category }}</a>
+        {{ end }}
       </div>
       {{ end }}
 
