@@ -5,7 +5,7 @@
   <channel>
     <title>{{ .Site.Title }}</title>
     <link>{{ .Site.BaseURL }}</link>
-    <description>{{ .Site.Params.description }}</description>
+    <description>{{ replace .Site.Params.description "&nbsp;" " " }}</description>
     <language>{{ .Site.LanguageCode }}</language>
     <lastBuildDate>{{ .Site.Lastmod | time.Format "Mon, 02 Jan 2006 15:04:05 MST" }}</lastBuildDate>
     <atom:link href="{{ .Permalink }}" rel="self" type="application/rss+xml" />
