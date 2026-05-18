@@ -6,15 +6,15 @@
       {{ $image := .Resize (delimit (slice $width "x") "") }}
       <img src="{{ $image.RelPermalink }}"
            srcset="{{ .RelPermalink }} 2x"
-           alt="{{ .Site.Title }}"
-           aria-label="{{ .Site.Title }}" />
+           alt="{{ $.Site.Title }}"
+           aria-label="{{ $.Site.Title }}" />
       {{ end }}
     </a>
   </div>
 
   {{ partial "menu.html" (dict "menuID" "main" "page" .) }}
 
-  <a href="javascript:void();" class="vg-hamburger">
+  <a href="javascript:void();" class="vg-hamburger" aria-label="Toggle menu" aria-controls="main-menu" aria-expanded="false">
     <div class="vg-hamburger__box">
       <div class="vg-hamburger__line"></div>
       <div class="vg-hamburger__line"></div>
