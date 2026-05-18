@@ -6,7 +6,8 @@
       {{ $image := .Resize (delimit (slice $width "x") "") }}
       <img src="{{ $image.RelPermalink }}"
            srcset="{{ .RelPermalink }} 2x"
-           alt="Logo" />
+           alt="{{ .Site.Title }}"
+           aria-label="{{ .Site.Title }}" />
       {{ end }}
     </a>
   </div>
