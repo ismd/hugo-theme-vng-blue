@@ -5,7 +5,8 @@
       {{ $width := string (div .Width 2) }}
       {{ $image := .Resize (delimit (slice $width "x") "") }}
       <img src="{{ $image.RelPermalink }}"
-           srcset="{{ .RelPermalink }} 2x" />
+           srcset="{{ .RelPermalink }} 2x"
+           alt="Logo" />
       {{ end }}
     </a>
   </div>

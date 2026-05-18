@@ -7,7 +7,8 @@
       {{ $width := string (div .Width 2) }}
       {{ $image := .Resize (delimit (slice $width "x") "") }}
       <img src="{{ $image.RelPermalink }}"
-           srcset="{{ .RelPermalink }} 2x" />
+           srcset="{{ .RelPermalink }} 2x"
+           alt="Top logo" />
       {{ end }}
     </div>
 
@@ -35,7 +36,8 @@
       {{ $width := string (div .Width 2) }}
       {{ $image := .Resize (delimit (slice $width "x") "") }}
       <img src="{{ $image.RelPermalink }}"
-           srcset="{{ .RelPermalink }} 2x" />      
+           srcset="{{ .RelPermalink }} 2x"
+           alt="Bottom logo" />
     </div>
     {{ end }}
     {{ end }}
