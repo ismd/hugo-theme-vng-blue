@@ -4,7 +4,7 @@
       {{ partial "menu.html" (dict "menuID" "main" "page" .) }}
     </div>
 
-    <div class="vg-sidebar__logo">
+    <div class="vg-sidebar__logo" alt="{{ .Site.Title }}" aria-label="{{ .Site.Title }}">
       {{ with resources.Get "logo-sidebar.png" }}
       {{ $width := string (div .Width 2) }}
       {{ $image := .Resize (delimit (slice $width "x") "") }}
