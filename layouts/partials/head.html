@@ -21,6 +21,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 <link href="https://iosevka-webfonts.github.io/iosevka/Iosevka.css" rel="stylesheet" />
 
+{{- if eq .Kind "page" -}}
+{{- with .Resources.GetMatch "cover.png" -}}
+{{- $cover := .Resize "800x" }}
+<link rel="preload" as="image" href="{{ $cover.RelPermalink }}" fetchpriority="high">
+{{- end -}}
+{{- end }}
+
 <!-- Favicon for all browsers -->
 <link rel="icon" href="{{ "favicon.svg" | relURL }}" type="image/svg+xml">
 <link rel="icon" href="{{ "favicon.ico" | relURL }}">

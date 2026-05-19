@@ -9,7 +9,7 @@
     {{ $resized := .Resize "800x" }}
     <div class="vg-post__image">
       {{ if $full }}
-      <img src="{{ $resized.RelPermalink }}" alt="{{ .Title }}">
+      <img src="{{ $resized.RelPermalink }}" alt="{{ .Title }}" fetchpriority="high" loading="eager">
       {{ else }}
       <a href="{{ $post.RelPermalink }}">
         <img src="{{ $resized.RelPermalink }}" alt="{{ .Title }}">
