@@ -23,8 +23,8 @@
 
 {{- if eq .Kind "page" -}}
 {{- with .Resources.GetMatch "cover.png" -}}
-{{- $cover := .Resize "800x" }}
-<link rel="preload" as="image" href="{{ $cover.RelPermalink }}" fetchpriority="high">
+{{- $cover := .Resize "800x webp q82" }}
+<link rel="preload" as="image" href="{{ $cover.RelPermalink }}" type="image/webp" fetchpriority="high">
 {{- end -}}
 {{- end }}
 
