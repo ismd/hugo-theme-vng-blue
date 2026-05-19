@@ -1,14 +1,21 @@
 # VnG Blue theme for Hugo
 
+A responsive Hugo blog theme with a perfect Lighthouse score, a flexible home page, and 30+ ready-to-use social network icons.
+
 [Demo website](https://ismd.github.io/demo-hugo-theme-vng-blue/)
+
+![Lighthouse 100/100/100/100 on both desktop and mobile](https://github.com/ismd/hugo-theme-vng-blue/raw/main/images/lighthouse.png)
 
 ## Features
 
-- Responsive design
-- Home page with different layouts
-- Categories and tags
-- A lot of social networks icons
-- About page
+- **Perfect Lighthouse score** — 100/100/100/100 across Performance, Accessibility, Best Practices and SEO, on both **desktop and mobile**
+- **"Next event" block on the home page** — a built-in section for announcing upcoming events, with three layout options (`top`, `bottom`, `none`)
+- **31 social network icons** included out of the box — from mainstream (X, Instagram, LinkedIn, YouTube, GitHub) to niche (Signal, Substack, Threads, WeChat, Viber, VK)
+- **Responsive design** with a hamburger menu and HiDPI (2x) image support
+- **Tag filtering** on the tags page with URL state — share or bookmark filtered views
+- **Categories** with a collapsible sidebar list
+- **About page with tabs** for sectioned profile content
+- **Giscus comments** on single post pages
 
 ## Installation
 
@@ -28,6 +35,25 @@ It's possible to configure different styles for the home page. The following par
 homeEventPosition: "top" # "top" or "bottom" or "none"
 homeToBlogText: "To&nbsp;blog"
 ```
+
+#### Screenshots
+
+homeEventPosition: "top"
+![Home page with event on top](https://github.com/ismd/hugo-theme-vng-blue/raw/main/images/screenshot.png)
+
+homeEventPosition: "bottom"
+![Home page with event on bottom](https://github.com/ismd/hugo-theme-vng-blue/raw/main/images/home-event-bottom.png)
+
+homeEventPosition: "none"
+![Home page without event](https://github.com/ismd/hugo-theme-vng-blue/raw/main/images/home-no-event.png)
+
+Also you can hide bottom logo on the home page. To do this remove `assets/home-logo-bottom.png` file. It will look like this:
+
+homeEventPosition: "top"
+![Home page without bottom logo](https://github.com/ismd/hugo-theme-vng-blue/raw/main/images/home-no-bottom-logo.png)
+
+homeEventPosition: "none"
+![Home page without bottom logo and event](https://github.com/ismd/hugo-theme-vng-blue/raw/main/images/home-no-event-and-bottom-logo.png)
 
 ### Comments
 
@@ -53,25 +79,6 @@ custom_script_inline: |
           async>
   </script>
 ```
-
-#### Screenshots
-
-homeEventPosition: "top"
-![Home page with event on top](https://github.com/ismd/hugo-theme-vng-blue/raw/main/images/screenshot.png)
-
-homeEventPosition: "bottom"
-![Home page with event on bottom](https://github.com/ismd/hugo-theme-vng-blue/raw/main/images/home-event-bottom.png)
-
-homeEventPosition: "none"
-![Home page without event](https://github.com/ismd/hugo-theme-vng-blue/raw/main/images/home-no-event.png)
-
-Also you can hide bottom logo on the home page. To do this remove `assets/home-logo-bottom.png` file. It will look like this:
-
-homeEventPosition: "top"
-![Home page without bottom logo](https://github.com/ismd/hugo-theme-vng-blue/raw/main/images/home-no-bottom-logo.png)
-
-homeEventPosition: "none"
-![Home page without bottom logo and event](https://github.com/ismd/hugo-theme-vng-blue/raw/main/images/home-no-event-and-bottom-logo.png)
 
 ## Images
 
