@@ -1,12 +1,12 @@
 {{- with resources.Get "js/main.js" }}
   {{- if eq hugo.Environment "development" }}
     {{- with . | js.Build }}
-      <script src="{{ .RelPermalink }}"></script>
+      <script>{{ .Content | safeJS }}</script>
     {{- end }}
   {{- else }}
     {{- $opts := dict "minify" true }}
-    {{- with . | js.Build $opts | fingerprint }}
-      <script src="{{ .RelPermalink }}" integrity="{{- .Data.Integrity }}" crossorigin="anonymous"></script>
+    {{- with . | js.Build $opts }}
+      <script>{{ .Content | safeJS }}</script>
     {{- end }}
   {{- end }}
 {{- end }}

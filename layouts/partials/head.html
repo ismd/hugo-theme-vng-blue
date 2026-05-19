@@ -16,9 +16,18 @@
 {{ . | safeHTML }}
 {{ end }}
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@500&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+{{ $fontsURL := "https://fonts.googleapis.com/css2?family=Fira+Code:wght@500&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" }}
+{{ $opts := dict "headers" (dict "User-Agent" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36") }}
+{{ with try (resources.GetRemote $fontsURL $opts) }}
+  {{ with .Err }}
+    {{ errorf "Failed to fetch Google Fonts CSS: %s" . }}
+  {{ else with .Value }}
+    <style>{{ .Content | safeCSS }}</style>
+  {{ else }}
+    {{ errorf "Unable to get remote resource %q" $fontsURL }}
+  {{ end }}
+{{ end }}
 
 {{- if eq .Kind "page" -}}
 {{- with .Resources.GetMatch "cover.png" -}}
