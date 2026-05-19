@@ -19,6 +19,40 @@ A responsive Hugo blog theme with a perfect Lighthouse score, a flexible home pa
 
 ## Installation
 
+### Hugo Modules (recommended)
+
+Initialize your site as a Hugo Module (if it isn't already):
+
+```bash
+hugo mod init github.com/your-username/your-site
+```
+
+Add the theme to your site configuration (`hugo.toml`):
+
+```toml
+theme = ["github.com/ismd/hugo-theme-vng-blue"]
+
+[module]
+  [[module.imports]]
+    path = "github.com/ismd/hugo-theme-vng-blue"
+```
+
+Then fetch the theme:
+
+```bash
+hugo mod get github.com/ismd/hugo-theme-vng-blue
+```
+
+To update the theme later:
+
+```bash
+hugo mod get -u github.com/ismd/hugo-theme-vng-blue
+```
+
+> Hugo Modules require [Go](https://go.dev/dl/) to be installed.
+
+### Git submodule
+
 ```bash
 git submodule add https://github.com/ismd/hugo-theme-vng-blue.git themes/vng-blue
 ```
