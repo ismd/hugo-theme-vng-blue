@@ -10,7 +10,7 @@ A responsive Hugo blog theme with a perfect Lighthouse score, a flexible home pa
 
 - **Perfect Lighthouse score** — 100/100/100/100 across Performance, Accessibility, Best Practices and SEO, on both **desktop and mobile**
 - **"Next event" block on the home page** — a built-in section for announcing upcoming events, with three layout options (`top`, `bottom`, `none`)
-- **31 social network icons** included out of the box — from mainstream (X, Instagram, LinkedIn, YouTube, GitHub) to niche (Signal, Substack, Threads, WeChat, Viber, VK)
+- **30+ social network icons** included out of the box — from mainstream (X, Instagram, LinkedIn, YouTube, GitHub) to niche (Signal, Substack, Threads, WeChat, Viber, VK)
 - **Responsive design** with a hamburger menu and HiDPI (2x) image support
 - **Tag filtering** on the tags page with URL state — share or bookmark filtered views
 - **Categories** with a collapsible sidebar list
@@ -47,7 +47,7 @@ homeEventPosition: "bottom"
 homeEventPosition: "none"
 ![Home page without event](https://github.com/ismd/hugo-theme-vng-blue/raw/main/images/home-no-event.png)
 
-Also you can hide bottom logo on the home page. To do this remove `assets/home-logo-bottom.png` file. It will look like this:
+You can also hide the bottom logo on the home page. To do this, remove the `assets/home-logo-bottom.png` file. It will look like this:
 
 homeEventPosition: "top"
 ![Home page without bottom logo](https://github.com/ismd/hugo-theme-vng-blue/raw/main/images/home-no-bottom-logo.png)
@@ -82,20 +82,20 @@ custom_script_inline: |
 
 ## Images
 
-This theme supports HiDPI displays. It means that you should provide images with double resolution for better quality on HiDPI displays. All sizes below are for HiDPI displays (you should provide images with this resolution).
+This theme supports HiDPI displays, which means you should provide images at double resolution for better quality. All sizes below are the target HiDPI resolutions.
 
 ### Home page
 
-On the home page there're two images: `home-logo-top.png` and `home-logo-bottom.png`. Their sizes can be different but the optimal are:
+On the home page there are two images: `home-logo-top.png` and `home-logo-bottom.png`. Their sizes can be different, but the optimal ones are:
 
-1. For the top one is 1600x530
-2. For the bottom one is 2080x470
+1. The top one: 1600x530
+2. The bottom one: 2080x470
 
 ### Logos
 
-There're two logos:
+There are two logos:
 
-1. In the left top corner on every page the size of logo can be any but recommended is 320x100
-2. In right sidebar on every page except home the size **must be** at least 440px/440px
+1. In the top-left corner of every page — the size of the logo can be anything, but 320x100 is recommended
+2. In the right sidebar on every page except the home page — the size **must be** at least 440x440 px
 
-Put all of these files in `assets` directory of your site.
+Put all of these files in the `assets` directory of your site.
