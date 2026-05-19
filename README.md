@@ -27,7 +27,9 @@ Initialize your site as a Hugo Module (if it isn't already):
 hugo mod init github.com/your-username/your-site
 ```
 
-Add the theme to your site configuration (`hugo.toml`):
+Add the theme to your site configuration.
+
+`hugo.toml`:
 
 ```toml
 theme = ["github.com/ismd/hugo-theme-vng-blue"]
@@ -35,6 +37,17 @@ theme = ["github.com/ismd/hugo-theme-vng-blue"]
 [module]
   [[module.imports]]
     path = "github.com/ismd/hugo-theme-vng-blue"
+```
+
+`hugo.yaml`:
+
+```yaml
+theme:
+  - github.com/ismd/hugo-theme-vng-blue
+
+module:
+  imports:
+    - path: github.com/ismd/hugo-theme-vng-blue
 ```
 
 Then fetch the theme:
