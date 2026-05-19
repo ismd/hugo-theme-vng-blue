@@ -17,7 +17,7 @@
 {{ end }}
 
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-{{ $fontsURL := "https://fonts.googleapis.com/css2?family=Fira+Code:wght@500&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" }}
+{{ $fontsURL := "https://fonts.googleapis.com/css2?family=Geist+Mono:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" }}
 {{ $opts := dict "headers" (dict "User-Agent" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36") }}
 {{ with try (resources.GetRemote $fontsURL $opts) }}
   {{ with .Err }}
