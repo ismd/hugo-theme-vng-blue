@@ -1,0 +1,14 @@
+<button class="vg-theme-switcher vg-theme-switcher_{{ .context }}"
+        type="button"
+        aria-label="Toggle theme"
+        title="Toggle theme">
+  <span class="vg-theme-switcher__icon vg-theme-switcher__icon_light" aria-hidden="true">
+    {{ with resources.Get "icons/theme-sun.svg" }}{{ .Content | safeHTML }}{{ end }}
+  </span>
+  <span class="vg-theme-switcher__icon vg-theme-switcher__icon_dark" aria-hidden="true">
+    {{ with resources.Get "icons/theme-moon.svg" }}{{ .Content | safeHTML }}{{ end }}
+  </span>
+  <span class="vg-theme-switcher__icon vg-theme-switcher__icon_auto" aria-hidden="true">
+    {{ with resources.Get "icons/theme-auto.svg" }}{{ .Content | safeHTML }}{{ end }}
+  </span>
+</button>

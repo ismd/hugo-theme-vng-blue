@@ -7,6 +7,14 @@
   --main-link-color: #265592;
   --background-color-light: #F7F8F6;
   --background-color-dark: #5E7181;
+  --surface-color: #FFFFFF;
+  --border-color: #DDE2DA;
+  --muted-text-color: #5E7181;
+  --code-bg: rgba(0, 0, 0, 0.05);
+  --sidebar-bg: #3073BB;
+  --sidebar-text: #F7F8F6;
+  --sidebar-tag-bg: #F7F8F6;
+  --sidebar-tag-text: #5E7181;
 }
 
 *:focus-visible {
@@ -17,8 +25,9 @@ a {
   text-decoration: none;
 }
 
-a:hover {
-  border-bottom: 1px solid transparent !important;
+.vg-post__text a:hover,
+.vg-about__content a:hover {
+  border-bottom-color: transparent;
 }
 
 p {
@@ -26,7 +35,7 @@ p {
 }
 
 code {
-  background: rgba(0, 0, 0, .05);
+  background: var(--code-bg);
   padding: 0 6px;
   white-space: pre-wrap;
   overflow-wrap: anywhere;
@@ -125,7 +134,7 @@ body.vg-sidebar-open {
   width: 300px;
   height: 100dvh;
   padding: 80px 0;
-  background: var(--main-color);
+  background: var(--sidebar-bg);
   box-sizing: border-box;
   transition: right 0.4s;
   overflow-y: auto;
@@ -154,7 +163,7 @@ body.vg-sidebar-open {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--main-color);
+  background: var(--sidebar-bg);
 }
 
 .vg-sidebar-footer .vg-social {
@@ -178,7 +187,7 @@ body.vg-sidebar-open {
 
 .vg-social__item svg {
   width: 100%;
-  color: var(--background-color-light);
+  color: var(--sidebar-text);
 }
 
 .vg-social__item:hover svg {
@@ -190,7 +199,7 @@ body.vg-sidebar-open {
   height: 220px;
   min-height: 220px;
   min-width: 220px;
-  background: var(--background-color-light);
+  background: var(--sidebar-tag-bg);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -204,7 +213,7 @@ body.vg-sidebar-open {
 .vg-sidebar__about {
   padding: 30px 20px 40px;
   font-size: 24px;
-  color: var(--background-color-light);
+  color: var(--sidebar-text);
   text-align: center;
 }
 
@@ -222,7 +231,7 @@ body.vg-sidebar-open {
 
 .vg-sidebar__menu .vg-menu-nav__item {
   margin: 4px 0;
-  color: var(--background-color-light);
+  color: var(--sidebar-text);
   font-size: 26px;
 }
 
@@ -238,9 +247,9 @@ body.vg-sidebar-open {
 .vg-sidebar-tags__tag:visited {
   font-family: var(--secondary-font);
   white-space: nowrap;
-  background: var(--background-color-light);
+  background: var(--sidebar-tag-bg);
   padding: 10px;
-  color: var(--background-color-dark);
+  color: var(--sidebar-tag-text);
   text-transform: lowercase;
 }
 
@@ -617,7 +626,8 @@ body.vg-sidebar-open {
   color: var(--main-link-color);
 }
 
-.vg-post__text a {
+.vg-post__text a,
+.vg-about__content a {
   border-bottom: 1px solid currentColor;
   color: var(--main-link-color);
 }
@@ -729,7 +739,7 @@ body.vg-sidebar-open {
 }
 
 .vg-home-social:hover {
-  border: 1px solid var(--background-color-dark);
+  border: 1px solid var(--background-color-dark) !important;
   text-decoration: none;
 }
 
@@ -1270,3 +1280,192 @@ body.vg-sidebar-open {
   margin-bottom: 30px;
 }
 /* END TAGS LIST */
+
+/* DARK THEME */
+html[data-theme="dark"] {
+  --main-color: #5B9BE0;
+  --main-color-rgb: 91, 155, 224;
+  --main-font-color: #E4E6EB;
+  --main-link-color: #8FC4F0;
+  --main-link-visited-color: #B89CE0;
+  --background-color-light: #0F1620;
+  --background-color-dark: #3B4756;
+  --surface-color: #1A2330;
+  --border-color: #2A3340;
+  --muted-text-color: #A0AAB8;
+  --code-bg: rgba(91, 155, 224, 0.12);
+  --sidebar-bg: #14253D;
+  --sidebar-text: #E4E6EB;
+  --sidebar-tag-bg: #2A3A52;
+  --sidebar-tag-text: #E4E6EB;
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]):not([data-theme="dark"]) {
+    --main-color: #5B9BE0;
+    --main-color-rgb: 91, 155, 224;
+    --main-font-color: #E4E6EB;
+    --main-link-color: #8FC4F0;
+    --main-link-visited-color: #B89CE0;
+    --background-color-light: #0F1620;
+    --background-color-dark: #3B4756;
+    --surface-color: #1A2330;
+    --border-color: #2A3340;
+    --muted-text-color: #A0AAB8;
+    --code-bg: rgba(91, 155, 224, 0.12);
+    --sidebar-bg: #14253D;
+    --sidebar-text: #E4E6EB;
+    --sidebar-tag-bg: #2A3A52;
+    --sidebar-tag-text: #E4E6EB;
+  }
+}
+
+/* Dark-mode element overrides: surfaces using --background-color-dark as bg
+   need light foreground text to remain readable. */
+html[data-theme-resolved="dark"] .vg-post__category a,
+html[data-theme-resolved="dark"] .vg-about-extended-info-tabs__tab_active,
+html[data-theme-resolved="dark"] .vg-tags-list-item:active,
+html[data-theme-resolved="dark"] .vg-tags-list-item_active {
+  color: var(--main-font-color);
+}
+
+html[data-theme-resolved="dark"] code {
+  color: var(--main-font-color);
+}
+
+html[data-theme-resolved="dark"] .vg-post__text a:visited,
+html[data-theme-resolved="dark"] .vg-about__content a:visited {
+  color: var(--main-link-visited-color);
+}
+/* END DARK THEME */
+
+/* THEME SWITCHER */
+.vg-theme-switcher {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.vg-theme-switcher:hover {
+  background: rgba(var(--main-color-rgb), 0.12);
+}
+
+.vg-theme-switcher:focus-visible {
+  outline: 2px solid var(--main-color);
+  outline-offset: 2px;
+}
+
+.vg-theme-switcher__icon {
+  display: none;
+  width: 22px;
+  height: 22px;
+  align-items: center;
+  justify-content: center;
+}
+
+.vg-theme-switcher__icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+html[data-theme="light"] .vg-theme-switcher__icon_light,
+html[data-theme="dark"] .vg-theme-switcher__icon_dark,
+html[data-theme="auto"] .vg-theme-switcher__icon_auto,
+html:not([data-theme]) .vg-theme-switcher__icon_auto {
+  display: inline-flex;
+}
+
+/* Header instance: visible when hamburger is shown (≤1024px), and on the
+   home page at all widths (sidebar is hidden there, so this is the only
+   place the switcher can live). */
+.vg-theme-switcher_header {
+  display: none;
+  margin: 30px 8px 0 0;
+  color: var(--main-font-color);
+}
+
+.vg-header_home {
+  position: relative;
+}
+
+.vg-header_home .vg-theme-switcher_header {
+  display: inline-flex;
+  position: absolute;
+  top: 35px;
+  right: 50px;
+  margin: 0;
+}
+
+@media (max-width: 1024px) {
+  .vg-theme-switcher_header {
+    display: inline-flex;
+    position: relative;
+    top: 10px;
+    right: 45px;
+    margin-left: auto;
+  }
+
+  .vg-header_home .vg-theme-switcher_header {
+    top: 40px;
+    right: 125px;
+  }
+}
+
+/* Sidebar instance: positioned top-right of sidebar, hidden on small screens
+   where the sidebar collapses into the off-canvas drawer. */
+.vg-theme-switcher_sidebar {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 1;
+  color: var(--sidebar-text);
+}
+
+.vg-theme-switcher_sidebar:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+@media (max-width: 1024px) {
+  .vg-theme-switcher_sidebar {
+    display: none;
+  }
+}
+/* END THEME SWITCHER */
+
+/* THEME TRANSITIONS */
+body,
+.vg-page,
+.vg-sidebar,
+.vg-sidebar-footer,
+.vg-sidebar-tags__tag,
+.vg-sidebar__about,
+.vg-sidebar__menu .vg-menu-nav__item,
+.vg-social__item svg,
+.vg-categories-list,
+.vg-post__category,
+.vg-post__category a,
+.vg-tags-list-item,
+.vg-about-extended-info-tabs__tab_active,
+.vg-about-mailto,
+code,
+pre,
+.vg-hamburger,
+.vg-theme-switcher {
+  transition: background-color 200ms ease, color 200ms ease, border-color 200ms ease;
+}
+
+html.vg-no-transition,
+html.vg-no-transition *,
+html.vg-no-transition *::before,
+html.vg-no-transition *::after {
+  transition: none !important;
+}
+/* END THEME TRANSITIONS */

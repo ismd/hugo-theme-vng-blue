@@ -50,7 +50,23 @@
 <link rel="manifest" href="{{ "site.webmanifest" | relURL }}">
 
 <!-- Theme color for Chrome, Firefox OS and Opera -->
-<meta name="theme-color" content="#5E7181" />
+<meta name="theme-color" id="vg-theme-color" content="#3073BB" />
+
+<script>
+(function() {
+  var t = 'auto';
+  try { t = localStorage.getItem('vg-theme') || 'auto'; } catch (e) {}
+  var d = document.documentElement;
+  var resolved = t === 'auto'
+    ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+    : t;
+  d.dataset.theme = t;
+  d.dataset.themeResolved = resolved;
+  d.classList.add('vg-no-transition');
+  var m = document.getElementById('vg-theme-color');
+  if (m) m.setAttribute('content', resolved === 'dark' ? '#14253D' : '#3073BB');
+})();
+</script>
 
 {{ partialCached "head/css.html" . }}
 {{ partialCached "head/js.html" . }}

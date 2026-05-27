@@ -1,4 +1,6 @@
 <div class="vg-sidebar{{ if .IsHome }} vg-sidebar_home{{ end }}">
+  {{ partial "theme-switcher.html" (dict "context" "sidebar" "page" .) }}
+
   <div class="vg-sidebar-main">
     <div class="vg-sidebar__menu">
       {{ partial "menu.html" (dict "menuID" "main" "page" .) }}

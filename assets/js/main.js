@@ -1,4 +1,48 @@
 document.addEventListener("DOMContentLoaded", function() {
+    // Theme switcher
+    const themeRoot = document.documentElement;
+    const themeMeta = document.getElementById('vg-theme-color');
+    const themeMq = window.matchMedia('(prefers-color-scheme: dark)');
+    const THEMES = ['light', 'dark', 'auto'];
+
+    const resolveTheme = (choice) =>
+        choice === 'auto' ? (themeMq.matches ? 'dark' : 'light') : choice;
+
+    const applyTheme = (choice) => {
+        const resolved = resolveTheme(choice);
+        themeRoot.dataset.theme = choice;
+        themeRoot.dataset.themeResolved = resolved;
+        if (themeMeta) {
+            themeMeta.setAttribute('content', resolved === 'dark' ? '#14253D' : '#3073BB');
+        }
+        document.querySelectorAll('.vg-theme-switcher').forEach((btn) => {
+            btn.setAttribute('aria-label', 'Theme: ' + choice);
+        });
+    };
+
+    // Re-enable transitions after first paint so the initial theme apply doesn't animate.
+    requestAnimationFrame(() => themeRoot.classList.remove('vg-no-transition'));
+
+    document.querySelectorAll('.vg-theme-switcher').forEach((btn) => {
+        btn.addEventListener('click', () => {
+            const current = themeRoot.dataset.theme || 'auto';
+            const next = THEMES[(THEMES.indexOf(current) + 1) % THEMES.length];
+            try { localStorage.setItem('vg-theme', next); } catch (e) {}
+            applyTheme(next);
+        });
+    });
+
+    themeMq.addEventListener('change', () => {
+        if ((themeRoot.dataset.theme || 'auto') === 'auto') {
+            applyTheme('auto');
+        }
+    });
+
+    // Sync aria-label with the theme already applied by the inline init script.
+    document.querySelectorAll('.vg-theme-switcher').forEach((btn) => {
+        btn.setAttribute('aria-label', 'Theme: ' + (themeRoot.dataset.theme || 'auto'));
+    });
+
     // Hamburger menu
     const hamburger = document.querySelector('.vg-hamburger');
     const sidebar = document.querySelector('.vg-sidebar');

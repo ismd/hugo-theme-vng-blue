@@ -14,6 +14,8 @@
 
   {{ partial "menu.html" (dict "menuID" "main" "page" .) }}
 
+  {{ partial "theme-switcher.html" (dict "context" "header" "page" .) }}
+
   <a href="javascript:void();" class="vg-hamburger" aria-label="Toggle menu" aria-controls="main-menu" aria-expanded="false">
     <div class="vg-hamburger__box">
       <div class="vg-hamburger__line"></div>
