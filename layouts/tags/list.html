@@ -1,5 +1,5 @@
 {{ define "main" }}
-<div class="vg-tags-list">
+<div class="vg-tags-list" data-tags-url="{{ .RelPermalink }}">
   {{ range .Pages }}
   <a href="{{ .RelPermalink }}" class="vg-tags-list-item" data-tag="{{ .Name }}">{{ .Name }}</a>
   {{ end }}

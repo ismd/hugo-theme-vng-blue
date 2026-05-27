@@ -108,6 +108,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     if (termTagsList) {
         const currentTag = termTagsList.getAttribute('data-current-tag');
+        const tagsBaseUrl = termTagsList.getAttribute('data-tags-url');
 
         termTagsList.querySelectorAll('.vg-tags-list-item').forEach(tag => {
             tag.addEventListener('click', (e) => {
@@ -115,7 +116,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 if (clickedTag === currentTag) return; // follow the link (deselect = reload same page)
 
                 e.preventDefault();
-                window.location.href = '/tags/?tags=' + encodeURIComponent(currentTag) + ',' + encodeURIComponent(clickedTag);
+                window.location.href = tagsBaseUrl + '?tags=' + encodeURIComponent(currentTag) + ',' + encodeURIComponent(clickedTag);
             });
         });
     }
@@ -127,7 +128,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const selectedTags = new Set();
         const tagsList = document.querySelectorAll('.vg-tags-list-item');
         const postsList = tagsPageList.querySelectorAll('.vg-post');
-        const tagsBasePath = '/tags/';
+        const tagsBasePath = document.querySelector('.vg-tags-list').getAttribute('data-tags-url');
 
         // Check if tags are selected in URL (?tags=linux,security)
         const url = new URL(window.location.href);
