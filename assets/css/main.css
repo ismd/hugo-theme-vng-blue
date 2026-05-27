@@ -1337,6 +1337,36 @@ html[data-theme-resolved="dark"] .vg-post__text a:visited,
 html[data-theme-resolved="dark"] .vg-about__content a:visited {
   color: var(--main-link-visited-color);
 }
+
+/* Chroma "friendly" style ships inline background and dark token colors
+   intended for light backgrounds. Override them in dark mode. */
+html[data-theme-resolved="dark"] .highlight,
+html[data-theme-resolved="dark"] .highlight pre {
+  background-color: rgba(var(--main-color-rgb), 0.08) !important;
+}
+
+html[data-theme-resolved="dark"] .highlight [style*="color:#007020"] {
+  color: #7ec699 !important;
+}
+html[data-theme-resolved="dark"] .highlight [style*="color:#062873"],
+html[data-theme-resolved="dark"] .highlight [style*="color:#06287e"] {
+  color: #82aaff !important;
+}
+html[data-theme-resolved="dark"] .highlight [style*="color:#0e84b5"] {
+  color: #56b6c2 !important;
+}
+html[data-theme-resolved="dark"] .highlight [style*="color:#4070a0"] {
+  color: #a3d4ff !important;
+}
+html[data-theme-resolved="dark"] .highlight [style*="color:#40a070"] {
+  color: #b5e890 !important;
+}
+html[data-theme-resolved="dark"] .highlight [style*="color:#666"] {
+  color: var(--muted-text-color) !important;
+}
+html[data-theme-resolved="dark"] .highlight [style*="color:#bb60d5"] {
+  color: #d49bff !important;
+}
 /* END DARK THEME */
 
 /* THEME SWITCHER */
