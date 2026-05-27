@@ -642,6 +642,11 @@ body.vg-sidebar-open {
   overflow-x: auto;
 }
 
+.vg-post__text img {
+  max-width: 100%;
+  height: auto;
+}
+
 @media (max-width: 768px) {
   .vg-post__content {
     flex-direction: column;
