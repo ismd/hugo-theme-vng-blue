@@ -557,6 +557,7 @@ body.vg-sidebar-open {
 
 .vg-post__image img {
   width: 100%;
+  height: auto;
 }
 
 .vg-post__summary {

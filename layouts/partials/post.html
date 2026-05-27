@@ -6,13 +6,35 @@
 <div class="vg-post{{ if $full }} vg-post_full{{ end }}" data-tags="{{ with .Params.tags }}{{ delimit . " " }}{{ end }}">
   <div class="vg-post__content">
     {{ with $post.Resources.GetMatch "cover.png" }}
-    {{ $resized := .Resize "800x webp q82" }}
+    {{ $src := . }}
+    {{ $srcset := slice }}
+    {{ range slice 400 600 800 1200 }}
+      {{ if le . $src.Width }}
+        {{ $r := $src.Resize (printf "%dx webp q82" .) }}
+        {{ $srcset = $srcset | append (printf "%s %dw" $r.RelPermalink .) }}
+      {{ end }}
+    {{ end }}
+    {{ $defaultW := cond (gt $src.Width 800) 800 $src.Width }}
+    {{ $default := $src.Resize (printf "%dx webp q82" $defaultW) }}
+    {{ $sizes := cond $full "(max-width: 768px) 100vw, 400px" "(max-width: 768px) 100vw, 200px" }}
     <div class="vg-post__image">
       {{ if $full }}
-      <img src="{{ $resized.RelPermalink }}" alt="{{ .Title }}" fetchpriority="high" loading="eager">
+      <img src="{{ $default.RelPermalink }}"
+           srcset="{{ delimit $srcset ", " }}"
+           sizes="{{ $sizes }}"
+           width="{{ $default.Width }}"
+           height="{{ $default.Height }}"
+           alt="{{ .Title }}"
+           fetchpriority="high"
+           loading="eager">
       {{ else }}
       <a href="{{ $post.RelPermalink }}">
-        <img src="{{ $resized.RelPermalink }}" alt="{{ .Title }}">
+        <img src="{{ $default.RelPermalink }}"
+             srcset="{{ delimit $srcset ", " }}"
+             sizes="{{ $sizes }}"
+             width="{{ $default.Width }}"
+             height="{{ $default.Height }}"
+             alt="{{ .Title }}">
       </a>
       {{ end }}
     </div>

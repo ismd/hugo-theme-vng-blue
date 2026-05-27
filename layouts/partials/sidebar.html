@@ -8,10 +8,10 @@
 
     <div class="vg-sidebar__logo">
       {{ with resources.Get "logo-sidebar.png" }}
-      {{ $width := string (div .Width 2) }}
-      {{ $image := .Resize (delimit (slice $width "x") "") }}
-      <img src="{{ $image.RelPermalink }}"
-           srcset="{{ .RelPermalink }} 2x"
+      {{ $1x := .Resize (printf "%dx webp q82" (div .Width 2)) }}
+      {{ $2x := .Resize (printf "%dx webp q82" .Width) }}
+      <img src="{{ $1x.RelPermalink }}"
+           srcset="{{ $2x.RelPermalink }} 2x"
            alt="{{ $.Site.Title }}"
            aria-label="{{ $.Site.Title }}" />
       {{ end }}

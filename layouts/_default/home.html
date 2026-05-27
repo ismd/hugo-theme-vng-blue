@@ -4,10 +4,10 @@
   <div class="vg-home-center vg-home-center_top{{ if ne $eventPosition "top" }} vg-home-center_without-event{{ end }}">
     <div class="vg-home-center__logo">
       {{ with resources.Get "home-logo-top.png" }}
-      {{ $width := string (div .Width 2) }}
-      {{ $image := .Resize (delimit (slice $width "x") "") }}
-      <img src="{{ $image.RelPermalink }}"
-           srcset="{{ .RelPermalink }} 2x"
+      {{ $1x := .Resize (printf "%dx webp q82" (div .Width 2)) }}
+      {{ $2x := .Resize (printf "%dx webp q82" .Width) }}
+      <img src="{{ $1x.RelPermalink }}"
+           srcset="{{ $2x.RelPermalink }} 2x"
            alt="Top logo" />
       {{ end }}
     </div>
@@ -33,10 +33,10 @@
     {{ if ne $eventPosition "bottom" }}
     {{ with resources.Get "home-logo-bottom.png" }}
     <div class="vg-home-center__logo">
-      {{ $width := string (div .Width 2) }}
-      {{ $image := .Resize (delimit (slice $width "x") "") }}
-      <img src="{{ $image.RelPermalink }}"
-           srcset="{{ .RelPermalink }} 2x"
+      {{ $1x := .Resize (printf "%dx webp q82" (div .Width 2)) }}
+      {{ $2x := .Resize (printf "%dx webp q82" .Width) }}
+      <img src="{{ $1x.RelPermalink }}"
+           srcset="{{ $2x.RelPermalink }} 2x"
            alt="Bottom logo" />
     </div>
     {{ end }}
