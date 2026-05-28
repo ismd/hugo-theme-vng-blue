@@ -1,4 +1,4 @@
-# VnG Blue theme for Hugo
+# V&G Blue theme for Hugo
 
 A responsive Hugo blog theme with a perfect Lighthouse score, a flexible home page, and 30+ ready-to-use social network icons.
 

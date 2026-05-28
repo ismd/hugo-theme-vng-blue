@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a Hugo theme called "VnG Blue" - a responsive blog theme designed for Hugo static sites. The theme supports categories, tags, customizable home page layouts, and extensive social media integration.
+This is a Hugo theme called "V&G Blue" - a responsive blog theme designed for Hugo static sites. The theme supports categories, tags, customizable home page layouts, and extensive social media integration.
 
 ## Development Commands
 
