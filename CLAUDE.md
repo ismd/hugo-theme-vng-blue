@@ -79,5 +79,6 @@ Uses CSS custom properties for theming:
 Theme requires Hugo extended version 0.158.0+ as specified in `config.toml`. Key configuration parameters should be set in site's `config.yaml/toml`:
 - `homeEventPosition`: Controls home page layout
 - `homeToBlogText`: Customizes blog link text
+- `author`: Author name in JSON-LD structured data (defaults to site title)
 - `giscus.enable`: Enables Giscus comments on single post pages (boolean)
 - `custom_script_inline`: Inline scripts added to head section (used for Giscus script)
