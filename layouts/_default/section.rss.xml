@@ -6,7 +6,7 @@
     <title>{{ .Site.Title }}</title>
     <link>{{ .Site.BaseURL }}</link>
     <description>{{ replace .Site.Params.description "&nbsp;" " " }}</description>
-    <language>{{ .Site.LanguageCode }}</language>
+    <language>{{ .Site.Language.Locale }}</language>
     <lastBuildDate>{{ .Site.Lastmod | time.Format "Mon, 02 Jan 2006 15:04:05 MST" }}</lastBuildDate>
     <atom:link href="{{ .Permalink }}" rel="self" type="application/rss+xml" />
     {{ range .RegularPages }}
