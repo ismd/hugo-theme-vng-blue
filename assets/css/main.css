@@ -535,6 +535,18 @@ body.vg-sidebar-open {
 .vg-posts-list_toggleable .vg-post_visible {
   display: block;
 }
+
+@media (max-width: 768px) {
+  .vg-posts-list .vg-post {
+    padding-bottom: 36px;
+  }
+
+  .vg-posts-list:not(.vg-posts-list_toggleable) .vg-post + .vg-post,
+  .vg-posts-list_toggleable .vg-post_visible ~ .vg-post_visible {
+    padding-top: 36px;
+    border-top: 1px solid var(--border-color);
+  }
+}
 /* END POSTS LIST */
 
 /* POST */
