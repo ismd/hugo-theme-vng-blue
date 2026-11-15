@@ -691,6 +691,49 @@ body.vg-sidebar-open {
 }
 /* END POST */
 
+/* TABLES */
+.vg-table {
+  margin: 20px 0;
+  overflow-x: auto;
+}
+
+.vg-table table {
+  width: 100%;
+  border-collapse: collapse;
+  line-height: 1.5;
+}
+
+.vg-table th,
+.vg-table td {
+  padding: 10px 14px;
+  border: 1px solid var(--border-color);
+  text-align: left;
+  vertical-align: top;
+}
+
+.vg-table th {
+  background: rgba(var(--main-color-rgb), .1);
+  font-weight: 600;
+}
+
+.vg-table th > :first-child,
+.vg-table td > :first-child {
+  margin-top: 0;
+}
+
+.vg-table th > :last-child,
+.vg-table td > :last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .vg-table th,
+  .vg-table td {
+    padding: 8px 10px;
+  }
+}
+/* END TABLES */
+
 /* HOME */
 .vg-home {
   display: flex;
@@ -1500,6 +1543,8 @@ body,
 .vg-about-mailto,
 code,
 pre,
+.vg-table th,
+.vg-table td,
 .vg-hamburger,
 .vg-theme-switcher {
   transition: background-color 200ms ease, color 200ms ease, border-color 200ms ease;
