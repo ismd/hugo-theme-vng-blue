@@ -10,5 +10,5 @@ tags = ["responsive", "blog", "light", "personal"]
 features = ["categories", "tags", "about"]
 
 [author]
-    name = "Vladimir Kosteley"
+    name = "Vladimir Kostelei"
     homepage = "https://github.com/ismd"
