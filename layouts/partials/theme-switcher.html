@@ -1,7 +1,10 @@
 <button class="vg-theme-switcher vg-theme-switcher_{{ .context }}"
         type="button"
-        aria-label="Toggle theme"
-        title="Toggle theme">
+        aria-label="{{ T "toggleTheme" }}"
+        title="{{ T "toggleTheme" }}"
+        data-label-light="{{ T "themeLight" }}"
+        data-label-dark="{{ T "themeDark" }}"
+        data-label-auto="{{ T "themeAuto" }}">
   <span class="vg-theme-switcher__icon vg-theme-switcher__icon_light" aria-hidden="true">
     {{ with resources.Get "icons/theme-sun.svg" }}{{ .Content | safeHTML }}{{ end }}
   </span>

@@ -4,10 +4,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>{{ .Site.Title }}</title>
-    <link>{{ .Site.BaseURL }}</link>
+    <link>{{ .Site.Home.Permalink }}</link>
     <description>{{ replace .Site.Params.description "&nbsp;" " " }}</description>
     <language>{{ .Site.Language.Locale }}</language>
-    <lastBuildDate>{{ .Site.Lastmod | time.Format "Mon, 02 Jan 2006 15:04:05 MST" }}</lastBuildDate>
+    <lastBuildDate>{{ .Site.Lastmod.Format "Mon, 02 Jan 2006 15:04:05 MST" }}</lastBuildDate>
     <atom:link href="{{ .Permalink }}" rel="self" type="application/rss+xml" />
     {{ range .RegularPages }}
     <item>

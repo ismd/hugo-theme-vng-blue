@@ -1,0 +1,17 @@
+toggleMenu = "Toggle menu"
+toggleTheme = "Toggle theme"
+themeLight = "Theme: light"
+themeDark = "Theme: dark"
+themeAuto = "Theme: auto"
+languageSwitcher = "Language"
+
+toBlog = "To&nbsp;blog"
+mailMe = "Mail&nbsp;me"
+homeLogoTop = "Top logo"
+homeLogoBottom = "Bottom logo"
+
+copyright = "Copyright {{ .Year }}. All rights reserved."
+
+notFoundTitle = "404 Not Found"
+notFoundText = "The page you requested cannot be found."
+notFoundLink = "Return to the home page"

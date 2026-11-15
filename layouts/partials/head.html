@@ -81,6 +81,18 @@
 {{ end }}
 {{ end }}
 
+{{- if and hugo.IsMultilingual (ne .Kind "404") }}
+{{- $translations := .Rotate "language" }}
+{{- if gt (len $translations) 1 }}
+{{- range $translations }}
+<link rel="alternate" hreflang="{{ .Language.Locale }}" href="{{ .Permalink }}">
+{{- end }}
+{{- with where $translations "Language.Name" hugo.Sites.Default.Language.Name }}
+<link rel="alternate" hreflang="x-default" href="{{ (index . 0).Permalink }}">
+{{- end }}
+{{- end }}
+{{- end }}
+
 {{ if in (slice "categories" "tags") .Section }}
 <meta name="robots" content="noindex, follow" />
 {{ end }}

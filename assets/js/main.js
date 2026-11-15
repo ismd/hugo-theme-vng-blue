@@ -8,6 +8,11 @@ document.addEventListener("DOMContentLoaded", function() {
     const resolveTheme = (choice) =>
         choice === 'auto' ? (themeMq.matches ? 'dark' : 'light') : choice;
 
+    // Labels are translated in the template (data-label-light/dark/auto).
+    const setThemeLabel = (btn, choice) => {
+        btn.setAttribute('aria-label', btn.getAttribute('data-label-' + choice) || 'Theme: ' + choice);
+    };
+
     const applyTheme = (choice) => {
         const resolved = resolveTheme(choice);
         themeRoot.dataset.theme = choice;
@@ -16,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function() {
             themeMeta.setAttribute('content', resolved === 'dark' ? '#14253D' : '#3073BB');
         }
         document.querySelectorAll('.vg-theme-switcher').forEach((btn) => {
-            btn.setAttribute('aria-label', 'Theme: ' + choice);
+            setThemeLabel(btn, choice);
         });
     };
 
@@ -40,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Sync aria-label with the theme already applied by the inline init script.
     document.querySelectorAll('.vg-theme-switcher').forEach((btn) => {
-        btn.setAttribute('aria-label', 'Theme: ' + (themeRoot.dataset.theme || 'auto'));
+        setThemeLabel(btn, themeRoot.dataset.theme || 'auto');
     });
 
     // Hamburger menu

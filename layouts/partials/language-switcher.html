@@ -1,0 +1,44 @@
+{{- /*
+Renders links to the current page in the site's other languages. When the page
+has no translation in a language, the link points to its closest translated
+ancestor (e.g. the section), and ultimately to that language's home page.
+Renders nothing on single-language sites.
+
+@context {page} page The current page.
+@context {string} context Where the switcher is rendered: "header" or "sidebar".
+
+@example: {{ partial "language-switcher.html" (dict "context" "header" "page" .) }}
+*/}}
+
+{{- $page := .page }}
+{{- if hugo.IsMultilingual }}
+  {{- /* Candidates in order of preference: the page itself, then its ancestors up to home.
+         The 404 page is skipped so that it links to the other language's home page. */}}
+  {{- $chain := slice }}
+  {{- if ne $page.Kind "404" }}
+    {{- $chain = $chain | append $page }}
+  {{- end }}
+  {{- range $page.Ancestors }}
+    {{- $chain = $chain | append . }}
+  {{- end }}
+
+  <nav class="vg-language-switcher vg-language-switcher_{{ .context }}" aria-label="{{ T "languageSwitcher" }}">
+    {{- range site.Home.Rotate "language" }}
+      {{- $lang := .Language }}
+      {{- if ne $lang.Name $page.Language.Name }}
+        {{- $target := . }}
+        {{- range $chain }}
+          {{- with where (.Rotate "language") "Language.Name" $lang.Name }}
+            {{- $target = index . 0 }}
+            {{- break }}
+          {{- end }}
+        {{- end }}
+        <a class="vg-language-switcher__item"
+           href="{{ $target.RelPermalink }}"
+           hreflang="{{ $lang.Locale }}"
+           lang="{{ $lang.Locale }}"
+           title="{{ $lang.Label }}">{{ upper $lang.Name }}</a>
+      {{- end }}
+    {{- end }}
+  </nav>
+{{- end }}

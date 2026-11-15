@@ -1,0 +1,17 @@
+toggleMenu = "Переключить меню"
+toggleTheme = "Переключить тему"
+themeLight = "Тема: светлая"
+themeDark = "Тема: тёмная"
+themeAuto = "Тема: автоматически"
+languageSwitcher = "Язык"
+
+toBlog = "В&nbsp;блог"
+mailMe = "Написать&nbsp;мне"
+homeLogoTop = "Верхний логотип"
+homeLogoBottom = "Нижний логотип"
+
+copyright = "© {{ .Year }}. Все права защищены."
+
+notFoundTitle = "404 Страница не найдена"
+notFoundText = "Запрошенная страница не существует."
+notFoundLink = "Вернуться на главную"

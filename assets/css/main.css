@@ -1469,11 +1469,61 @@ html:not([data-theme]) .vg-theme-switcher__icon_auto {
   display: inline-flex;
 }
 
+.vg-theme-switcher_sidebar:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+/* END THEME SWITCHER */
+
+/* LANGUAGE SWITCHER */
+.vg-language-switcher {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.vg-language-switcher__item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  height: 40px;
+  padding: 0 6px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  color: inherit;
+  font-family: var(--main-font);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.vg-language-switcher__item:hover {
+  background: rgba(var(--main-color-rgb), 0.12);
+}
+
+.vg-language-switcher__item:focus-visible {
+  outline: 2px solid var(--main-color);
+  outline-offset: 2px;
+}
+
+.vg-language-switcher_sidebar .vg-language-switcher__item:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+/* END LANGUAGE SWITCHER */
+
+/* CONTROLS (language and theme switchers) */
+.vg-controls {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
 /* Header instance: visible when hamburger is shown (≤1024px), and on the
    home page at all widths (sidebar is hidden there, so this is the only
-   place the switcher can live). */
-.vg-theme-switcher_header {
+   place the controls can live). */
+.vg-controls_header {
   display: none;
+  align-self: flex-start;
   margin: 30px 8px 0 0;
   color: var(--main-font-color);
 }
@@ -1482,8 +1532,8 @@ html:not([data-theme]) .vg-theme-switcher__icon_auto {
   position: relative;
 }
 
-.vg-header_home .vg-theme-switcher_header {
-  display: inline-flex;
+.vg-header_home .vg-controls_header {
+  display: flex;
   position: absolute;
   top: 35px;
   right: 50px;
@@ -1491,23 +1541,33 @@ html:not([data-theme]) .vg-theme-switcher__icon_auto {
 }
 
 @media (max-width: 1024px) {
-  .vg-theme-switcher_header {
-    display: inline-flex;
+  .vg-controls_header {
+    display: flex;
     position: relative;
     top: 10px;
     right: 45px;
     margin-left: auto;
   }
 
-  .vg-header_home .vg-theme-switcher_header {
+  .vg-header_home .vg-controls_header {
     top: 40px;
     right: 125px;
+  }
+
+  /* The language switcher makes the controls wider: move them closer to the
+     hamburger so they don't run into the logo on narrow phones. */
+  .vg-controls_header.vg-controls_multilingual {
+    right: 15px;
+  }
+
+  .vg-header_home .vg-controls_header.vg-controls_multilingual {
+    right: 95px;
   }
 }
 
 /* Sidebar instance: positioned top-right of sidebar, hidden on small screens
    where the sidebar collapses into the off-canvas drawer. */
-.vg-theme-switcher_sidebar {
+.vg-controls_sidebar {
   position: absolute;
   top: 20px;
   right: 20px;
@@ -1515,16 +1575,12 @@ html:not([data-theme]) .vg-theme-switcher__icon_auto {
   color: var(--sidebar-text);
 }
 
-.vg-theme-switcher_sidebar:hover {
-  background: rgba(255, 255, 255, 0.12);
-}
-
 @media (max-width: 1024px) {
-  .vg-theme-switcher_sidebar {
+  .vg-controls_sidebar {
     display: none;
   }
 }
-/* END THEME SWITCHER */
+/* END CONTROLS */
 
 /* THEME TRANSITIONS */
 body,
@@ -1546,7 +1602,8 @@ pre,
 .vg-table th,
 .vg-table td,
 .vg-hamburger,
-.vg-theme-switcher {
+.vg-theme-switcher,
+.vg-language-switcher__item {
   transition: background-color 200ms ease, color 200ms ease, border-color 200ms ease;
 }
 

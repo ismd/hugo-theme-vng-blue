@@ -37,6 +37,7 @@ npx svgo assets/icons/
   - `css/main.css`: Main stylesheet with CSS custom properties
   - `js/main.js`: Interactive features (hamburger menu, tabs, tag filtering)
   - `icons/`: SVG icons including extensive social media collection
+- `i18n/`: Theme UI strings (`en.toml`, `ru.toml`), used via `T`
 - `static/`: Static files served directly
 - `archetypes/`: Content templates
 
@@ -50,6 +51,7 @@ The theme supports three home page layouts controlled by `homeEventPosition` par
 - **Responsive Design**: Mobile-first approach with hamburger menu
 - **Social Integration**: 25+ social media icons in `assets/icons/social/`
 - **Tag Filtering**: JavaScript-powered tag filtering on tags page with URL state
+- **Multilingual**: `partials/language-switcher.html` (rendered next to the theme switcher inside `.vg-controls`) and `hreflang` links in `head.html`; both render only when `hugo.IsMultilingual`. Links must be language-aware (`relLangURL`/`absLangURL`, `site.Home.Permalink`, not `relURL`/`absURL`/`site.BaseURL`), and UI text goes through `T` with keys in `i18n/`. Theme i18n keys must not collide with menu identifiers, since `menu.html` translates entries via `T .Identifier`
 - **HiDPI Support**: Theme expects 2x resolution images for optimal display
 - **Image Requirements**:
   - Home logos: `home-logo-top.png` (1600x530), `home-logo-bottom.png` (2080x470)

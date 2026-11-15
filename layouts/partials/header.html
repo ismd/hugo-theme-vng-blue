@@ -1,6 +1,6 @@
 <header class="vg-header{{ if .IsHome }} vg-header_home{{ end }}">
   <div class="vg-header__logo">
-    <a href="{{ .Site.BaseURL }}">
+    <a href="{{ site.Home.RelPermalink }}">
       {{ with resources.Get "logo.png" }}
       {{ $1x := .Resize (printf "%dx webp q90" (div .Width 2)) }}
       {{ $2x := .Resize (printf "%dx webp q90" .Width) }}
@@ -14,9 +14,12 @@
 
   {{ partial "menu.html" (dict "menuID" "main" "page" .) }}
 
-  {{ partial "theme-switcher.html" (dict "context" "header" "page" .) }}
+  <div class="vg-controls vg-controls_header{{ if hugo.IsMultilingual }} vg-controls_multilingual{{ end }}">
+    {{ partial "language-switcher.html" (dict "context" "header" "page" .) }}
+    {{ partial "theme-switcher.html" (dict "context" "header" "page" .) }}
+  </div>
 
-  <a href="javascript:void();" class="vg-hamburger" aria-label="Toggle menu" aria-controls="main-menu" aria-expanded="false">
+  <a href="javascript:void();" class="vg-hamburger" aria-label="{{ T "toggleMenu" }}" aria-controls="main-menu" aria-expanded="false">
     <div class="vg-hamburger__box">
       <div class="vg-hamburger__line"></div>
       <div class="vg-hamburger__line"></div>

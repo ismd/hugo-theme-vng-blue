@@ -16,6 +16,7 @@ A responsive Hugo blog theme with a perfect Lighthouse score, a flexible home pa
 - **Categories** with a collapsible sidebar list
 - **About page with tabs** for sectioned profile content
 - **Giscus comments** on single post pages
+- **Multilingual** — a language switcher, `hreflang` links and translated interface (English and Russian included)
 
 ## Installation
 
@@ -126,6 +127,52 @@ custom_script_inline: |
           async>
   </script>
 ```
+
+### Multilingual
+
+The theme supports Hugo's [multilingual mode](https://gohugo.io/content-management/multilingual/). Define the languages in your site configuration:
+
+```toml
+defaultContentLanguage = "en"
+
+[languages.en]
+label = "English"
+locale = "en-US"
+title = "My Blog"
+weight = 1
+[languages.en.params]
+description = "Blog about ..."
+
+[languages.ru]
+label = "Русский"
+locale = "ru-RU"
+title = "Мой блог"
+weight = 2
+[languages.ru.params]
+description = "Блог о ..."
+```
+
+Any parameter (`description`, `homeToBlogText`, `mailMeText`, `author`, `custom_script_inline`, etc.) can be set per language under `[languages.<lang>.params]`.
+
+Translate a post by adding a language suffix to its file name. Translations of a page bundle share its resources, so one `cover.png` is enough:
+
+```
+content/posts/my-post/
+├── index.en.md
+├── index.ru.md
+└── cover.png
+```
+
+With two or more languages, the theme:
+
+- shows a language switcher next to the theme switcher. It links to the translation of the current page, or to the closest translated section (or home page) when there is none;
+- adds `hreflang` alternate links to every translated page.
+
+Menu entries are translated by their `identifier`: add it as a key to your site's `i18n/<lang>.toml` (e.g. `posts = "Посты"`), or define menus per language with `[[languages.<lang>.menus.main]]`.
+
+#### Interface strings
+
+The theme's own strings (footer, 404 page, "To blog" button, accessibility labels) are translated into English and Russian. To change a string or add another language, create `i18n/<lang>.toml` in your site and copy the keys from the theme's [`i18n/en.toml`](i18n/en.toml).
 
 ## Images
 

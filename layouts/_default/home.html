@@ -8,7 +8,7 @@
       {{ $2x := .Resize (printf "%dx webp q82" .Width) }}
       <img src="{{ $1x.RelPermalink }}"
            srcset="{{ $2x.RelPermalink }} 2x"
-           alt="Top logo" />
+           alt="{{ T "homeLogoTop" }}" />
       {{ end }}
     </div>
 
@@ -37,7 +37,7 @@
       {{ $2x := .Resize (printf "%dx webp q82" .Width) }}
       <img src="{{ $1x.RelPermalink }}"
            srcset="{{ $2x.RelPermalink }} 2x"
-           alt="Bottom logo" />
+           alt="{{ T "homeLogoBottom" }}" />
     </div>
     {{ end }}
     {{ end }}
